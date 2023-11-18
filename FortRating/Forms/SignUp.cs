@@ -1,5 +1,4 @@
-﻿using FortRating.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FortRating
+namespace FortRating.Forms
 {
-    public partial class LogIn : Form
+    public partial class SignUp : Form
     {
-        public LogIn()
+        public SignUp()
         {
             InitializeComponent();
+        }
+
+        private void SignUpButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -23,10 +27,10 @@ namespace FortRating
             Application.Exit();
         }
 
-        private void SignUpButton_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            new SignUp().Show();
             this.Hide();
+            new LogIn().Show();
         }
     }
 }
