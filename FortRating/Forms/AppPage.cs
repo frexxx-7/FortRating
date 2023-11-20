@@ -28,7 +28,7 @@ namespace FortRating.Forms
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.White;
+                currentBtn.BackColor = Color.FromArgb(233,233,233                                                           );
                 currentBtn.ForeColor = Color.Black;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.Black;
@@ -102,11 +102,20 @@ namespace FortRating.Forms
             Application.Exit();
         }
 
-        private void iconButton1_Click_1(object sender, EventArgs e)
+        private void RatingButton_Click(object sender, EventArgs e)
         {
-            Students students = new Students();
-            ActiveButton(sender); OpenForm of = new OpenForm(OpenChildForm);
-            OpenChildForm(students);
+            OpenForm of = new OpenForm(OpenChildForm);
+            Rating rating = new Rating(of);
+            ActiveButton(sender); 
+            OpenChildForm(rating);
+        }
+
+        private void EventsButton_Click(object sender, EventArgs e)
+        {
+            OpenForm of = new OpenForm(OpenChildForm);
+            Events events = new Events(of);
+            ActiveButton(sender);
+            OpenChildForm(events);
         }
 
         public AppPage()

@@ -18,9 +18,10 @@ namespace FortRating.AddEditForms
     {
         private string idStudent;
         public delegate void LoadInfoGroups();
-        public EditProfile()
+        public EditProfile(string idStudent)
         {
             InitializeComponent();
+            this.idStudent = idStudent;
         }
 
         private void AddGroupButton_Click(object sender, EventArgs e)

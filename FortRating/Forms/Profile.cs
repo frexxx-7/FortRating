@@ -17,6 +17,7 @@ namespace FortRating.Forms
     public partial class Profile : Form
     {
         private AppPage.OpenForm of;
+        private string idStudent;
         public Profile(AppPage.OpenForm of)
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace FortRating.Forms
         private void loadAllInfoUser()
         {
             DB db = new DB();
-            string queryInfo = $"select concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, users.* from students " +
+            string queryInfo = $"select students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, users.* from students " +
                 $"left join users on users.id = students.idUser " +
                 $"where students.idUser = {AppPage.idUser} ";
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
@@ -35,6 +36,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
+                idStudent= reader["id"].ToString();
                 LoginLabel.Text = reader["login"].ToString();
                 FIOLabel.Text = reader["FIO"].ToString() != "" ? reader["FIO"].ToString() : "Не указано";
             }
@@ -46,7 +48,7 @@ namespace FortRating.Forms
 
         private void EditProfieButton_Click(object sender, EventArgs e)
         {
-            EditProfile ep = new EditProfile();
+            EditProfile ep = new EditProfile(idStudent);
             of(ep);
         }
 

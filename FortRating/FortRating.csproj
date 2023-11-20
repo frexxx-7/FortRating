@@ -78,6 +78,20 @@
     </Compile>
     <Compile Include="Classes\ComboBoxItem.cs" />
     <Compile Include="Classes\DB.cs" />
+    <Compile Include="Classes\Events\EventsBLL.cs" />
+    <Compile Include="Classes\Events\EventsFunc.cs" />
+    <Compile Include="Forms\Events.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Events.Designer.cs">
+      <DependentUpon>Events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FullInfoEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FullInfoEvent.Designer.cs">
+      <DependentUpon>FullInfoEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +110,12 @@
     <Compile Include="Forms\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Rating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rating.Designer.cs">
+      <DependentUpon>Rating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +130,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\EventControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EventControl.Designer.cs">
+      <DependentUpon>EventControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddEditForms\AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Events.resx">
+      <DependentUpon>Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FullInfoEvent.resx">
+      <DependentUpon>FullInfoEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -124,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rating.resx">
+      <DependentUpon>Rating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
@@ -141,6 +176,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\EventControl.resx">
+      <DependentUpon>EventControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,8 +193,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
