@@ -56,7 +56,7 @@ namespace FortRating
                     {
                         AppPage main = new AppPage();
                         AppPage.idUser = reader[0].ToString();
-                        AppPage.login = reader[1].ToString();
+                        AppPage.login = reader["login"].ToString();
                         this.Hide();
                         main.Show();
                         MessageBox.Show("Добро пожаловать");

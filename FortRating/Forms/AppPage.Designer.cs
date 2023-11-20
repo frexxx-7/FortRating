@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.StudentsButton = new FontAwesome.Sharp.IconButton();
+            this.ProfileButton = new FontAwesome.Sharp.IconButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.headPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -40,8 +42,6 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PanelDesktop = new Guna.UI2.WinForms.Guna2Panel();
-            this.ProfileButton = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -57,7 +57,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
-            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.StudentsButton);
             this.panelMenu.Controls.Add(this.ProfileButton);
             this.panelMenu.Controls.Add(this.guna2Panel2);
             this.panelMenu.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -68,6 +68,52 @@
             this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.panelMenu.Size = new System.Drawing.Size(223, 590);
             this.panelMenu.TabIndex = 8;
+            // 
+            // StudentsButton
+            // 
+            this.StudentsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StudentsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.StudentsButton.FlatAppearance.BorderSize = 0;
+            this.StudentsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StudentsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StudentsButton.ForeColor = System.Drawing.Color.Black;
+            this.StudentsButton.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.StudentsButton.IconColor = System.Drawing.Color.Black;
+            this.StudentsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.StudentsButton.IconSize = 30;
+            this.StudentsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.StudentsButton.Location = new System.Drawing.Point(0, 198);
+            this.StudentsButton.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.StudentsButton.Name = "StudentsButton";
+            this.StudentsButton.Size = new System.Drawing.Size(220, 55);
+            this.StudentsButton.TabIndex = 10;
+            this.StudentsButton.Text = "Учащиеся";
+            this.StudentsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.StudentsButton.UseVisualStyleBackColor = true;
+            this.StudentsButton.Click += new System.EventHandler(this.iconButton1_Click_1);
+            // 
+            // ProfileButton
+            // 
+            this.ProfileButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProfileButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProfileButton.FlatAppearance.BorderSize = 0;
+            this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProfileButton.ForeColor = System.Drawing.Color.Black;
+            this.ProfileButton.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.ProfileButton.IconColor = System.Drawing.Color.Black;
+            this.ProfileButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ProfileButton.IconSize = 30;
+            this.ProfileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProfileButton.Location = new System.Drawing.Point(0, 143);
+            this.ProfileButton.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.ProfileButton.Name = "ProfileButton";
+            this.ProfileButton.Size = new System.Drawing.Size(220, 55);
+            this.ProfileButton.TabIndex = 9;
+            this.ProfileButton.Text = "Профиль";
+            this.ProfileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ProfileButton.UseVisualStyleBackColor = true;
+            this.ProfileButton.Click += new System.EventHandler(this.ProfileButton_Click);
             // 
             // guna2Panel2
             // 
@@ -181,52 +227,6 @@
             this.PanelDesktop.Size = new System.Drawing.Size(747, 531);
             this.PanelDesktop.TabIndex = 10;
             // 
-            // ProfileButton
-            // 
-            this.ProfileButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProfileButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ProfileButton.FlatAppearance.BorderSize = 0;
-            this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ProfileButton.ForeColor = System.Drawing.Color.Black;
-            this.ProfileButton.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.ProfileButton.IconColor = System.Drawing.Color.Black;
-            this.ProfileButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ProfileButton.IconSize = 30;
-            this.ProfileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ProfileButton.Location = new System.Drawing.Point(0, 143);
-            this.ProfileButton.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
-            this.ProfileButton.Name = "ProfileButton";
-            this.ProfileButton.Size = new System.Drawing.Size(220, 55);
-            this.ProfileButton.TabIndex = 9;
-            this.ProfileButton.Text = "Профиль";
-            this.ProfileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ProfileButton.UseVisualStyleBackColor = true;
-            this.ProfileButton.Click += new System.EventHandler(this.ProfileButton_Click);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 198);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(220, 55);
-            this.iconButton1.TabIndex = 10;
-            this.iconButton1.Text = "Рейтинг";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
-            // 
             // AppPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,6 +263,6 @@
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label labelTitleChildForm;
         private FontAwesome.Sharp.IconButton ProfileButton;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton StudentsButton;
     }
 }

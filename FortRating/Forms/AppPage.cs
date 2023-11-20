@@ -104,8 +104,9 @@ namespace FortRating.Forms
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-
+            Students students = new Students();
+            ActiveButton(sender); OpenForm of = new OpenForm(OpenChildForm);
+            OpenChildForm(students);
         }
 
         public AppPage()
