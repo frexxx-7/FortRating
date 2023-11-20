@@ -52,17 +52,35 @@ namespace FortRating.Classes.Events
             /*string query = idEvent != null ? $"select * from events " +
                     $"WHERE (id_userComment = {idEvent}) " :
                     "select * from events";*/
-            string query = searchText == null ?
+            string query = null;
+            if (idEvent != null)
+            {
+                query = searchText == null ?
                     $"SELECT * FROM events " +
                     $"WHERE id = {idEvent} " +
                     $"ORDER BY id DESC " +
                     $"LIMIT {startRows}, {numberRows};"
                     :
                     $"SELECT * FROM events " +
-                    $"WHERE id = {idEvent} AND concat(name, description, dateEvent, points) LIKE '{searchText}%' " +
+                    $"WHERE id = {idEvent} AND concat(name, description, dateEvent, points) LIKE '%{searchText}%' " +
                     $"ORDER BY id DESC " +
                     $"LIMIT {startRows}, {numberRows};"
                     ;
+            }
+            else
+            {
+                query = searchText == null ?
+                    $"SELECT * FROM events " +
+                    $"ORDER BY id DESC " +
+                    $"LIMIT {startRows}, {numberRows};"
+                    :
+                    $"SELECT * FROM events " +
+                    $"WHERE concat(name, description, dateEvent, points) LIKE '%{searchText}%' " +
+                    $"ORDER BY id DESC " +
+                    $"LIMIT {startRows}, {numberRows};"
+                    ;
+            }
+
             MySqlCommand cmd = new MySqlCommand(query, db.getConnection());
             try
             {

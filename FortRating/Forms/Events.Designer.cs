@@ -32,10 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.EventsPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,10 +46,11 @@
             this.nextPageLabel = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.AddButton = new Guna.UI2.WinForms.Guna2Button();
+            this.EventsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.MainPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.EventsPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,27 +79,13 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.Controls.Add(this.SearchTextBox);
             this.guna2Panel1.Controls.Add(this.iconPictureBox1);
             this.guna2Panel1.Location = new System.Drawing.Point(706, 27);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(277, 41);
             this.guna2Panel1.TabIndex = 5;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 41;
-            this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(43, 41);
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
             // 
             // SearchTextBox
             // 
@@ -124,37 +109,24 @@
             this.SearchTextBox.TabIndex = 4;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
-            // EventsPanel
+            // iconPictureBox1
             // 
-            this.EventsPanel.Controls.Add(this.guna2VScrollBar1);
-            this.EventsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EventsPanel.Location = new System.Drawing.Point(0, 0);
-            this.EventsPanel.Name = "EventsPanel";
-            this.EventsPanel.Size = new System.Drawing.Size(967, 380);
-            this.EventsPanel.TabIndex = 0;
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.AutoRoundedCorners = true;
-            this.guna2VScrollBar1.BorderRadius = 9;
-            this.guna2VScrollBar1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.guna2VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.White;
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(946, 0);
-            this.guna2VScrollBar1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 21;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(21, 380);
-            this.guna2VScrollBar1.TabIndex = 6;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.Black;
-            this.guna2VScrollBar1.ThumbSize = 5F;
-            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 41;
+            this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(43, 41);
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.guna2Panel2.Controls.Add(this.label9);
             this.guna2Panel2.Controls.Add(this.label8);
             this.guna2Panel2.Controls.Add(this.label7);
@@ -331,12 +303,38 @@
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // AddButton
+            // 
+            this.AddButton.BorderRadius = 5;
+            this.AddButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddButton.ForeColor = System.Drawing.Color.White;
+            this.AddButton.Location = new System.Drawing.Point(238, 24);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(144, 42);
+            this.AddButton.TabIndex = 19;
+            this.AddButton.Text = "Добавить";
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // EventsPanel
+            // 
+            this.EventsPanel.AutoScroll = true;
+            this.EventsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EventsPanel.Location = new System.Drawing.Point(0, 0);
+            this.EventsPanel.Name = "EventsPanel";
+            this.EventsPanel.Size = new System.Drawing.Size(967, 380);
+            this.EventsPanel.TabIndex = 7;
+            // 
             // Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1036, 549);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.nextPageLabel);
             this.Controls.Add(this.previousPageLabel);
@@ -351,7 +349,6 @@
             this.MainPanel.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.EventsPanel.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -367,8 +364,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
-        private Guna.UI2.WinForms.Guna2Panel EventsPanel;
-        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -381,5 +376,7 @@
         private System.Windows.Forms.Label nextPageLabel;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Guna.UI2.WinForms.Guna2Button AddButton;
+        private System.Windows.Forms.FlowLayoutPanel EventsPanel;
     }
 }

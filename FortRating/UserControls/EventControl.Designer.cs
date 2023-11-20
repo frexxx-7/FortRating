@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.DateLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.PointsLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.PointLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderRadius = 2;
-            this.guna2Panel1.Controls.Add(this.PointLabel);
+            this.guna2Panel1.BorderThickness = 2;
+            this.guna2Panel1.Controls.Add(this.PointsLabel);
             this.guna2Panel1.Controls.Add(this.flowLayoutPanel2);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.flowLayoutPanel1);
@@ -56,37 +57,21 @@
             this.guna2Panel1.Size = new System.Drawing.Size(436, 377);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // NameLabel
+            // PointsLabel
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameLabel.Location = new System.Drawing.Point(3, 0);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(111, 26);
-            this.NameLabel.TabIndex = 3;
-            this.NameLabel.Text = "Название";
-            // 
-            // DateLabel
-            // 
-            this.DateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DateLabel.AutoSize = true;
-            this.DateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateLabel.Location = new System.Drawing.Point(319, 337);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(100, 24);
-            this.DateLabel.TabIndex = 4;
-            this.DateLabel.Text = "01.10.1999";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.NameLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 23);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(376, 108);
-            this.flowLayoutPanel1.TabIndex = 5;
+            this.PointsLabel.AutoSize = true;
+            this.PointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PointsLabel.Location = new System.Drawing.Point(126, 303);
+            this.PointsLabel.Name = "PointsLabel";
+            this.PointsLabel.Size = new System.Drawing.Size(80, 26);
+            this.PointsLabel.TabIndex = 7;
+            this.PointsLabel.Text = "Баллы";
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.Controls.Add(this.DescriptionLabel);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(21, 137);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -113,15 +98,37 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Баллы:";
             // 
-            // PointLabel
+            // flowLayoutPanel1
             // 
-            this.PointLabel.AutoSize = true;
-            this.PointLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PointLabel.Location = new System.Drawing.Point(116, 303);
-            this.PointLabel.Name = "PointLabel";
-            this.PointLabel.Size = new System.Drawing.Size(80, 26);
-            this.PointLabel.TabIndex = 7;
-            this.PointLabel.Text = "Баллы";
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.NameLabel);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 23);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(376, 108);
+            this.flowLayoutPanel1.TabIndex = 5;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameLabel.Location = new System.Drawing.Point(3, 0);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(111, 26);
+            this.NameLabel.TabIndex = 3;
+            this.NameLabel.Text = "Название";
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateLabel.Location = new System.Drawing.Point(297, 332);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(100, 24);
+            this.DateLabel.TabIndex = 4;
+            this.DateLabel.Text = "01.10.1999";
             // 
             // EventControl
             // 
@@ -132,10 +139,10 @@
             this.Size = new System.Drawing.Size(436, 377);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -148,7 +155,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label DateLabel;
-        private System.Windows.Forms.Label PointLabel;
+        private System.Windows.Forms.Label PointsLabel;
         private System.Windows.Forms.Label label1;
     }
 }

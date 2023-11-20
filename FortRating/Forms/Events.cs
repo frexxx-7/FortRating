@@ -1,4 +1,5 @@
-﻿using FortRating.Classes;
+﻿using FortRating.AddEditForms;
+using FortRating.Classes;
 using FortRating.Classes.Events;
 using FortRating.UserControls;
 using Guna.UI2.WinForms;
@@ -30,7 +31,7 @@ namespace FortRating.Forms
         private delegate void addLoaderToPanel();
         private addLoaderToPanel addLoader;
 
-        private delegate void viewPanelJobs(Guna2Panel panel);
+        private delegate void viewPanelJobs(FlowLayoutPanel panel);
         private viewPanelJobs viewPanel;
 
         private string searchText = null;
@@ -48,7 +49,7 @@ namespace FortRating.Forms
             EventsPanel.Controls.Add(panel);
             panel.BringToFront();
         }
-        private void viewPanels(Guna2Panel panel)
+        private void viewPanels(FlowLayoutPanel panel)
         {
             panel.Visible = true;
         }
@@ -63,7 +64,7 @@ namespace FortRating.Forms
         {
             EventsBLL objbll = new EventsBLL();
 
-            DataTable dt = objbll.GetItemsEvents(AppPage.idUser, _startRows, _numberRows, searchText);
+            DataTable dt = objbll.GetItemsEvents(null, _startRows, _numberRows, searchText);
 
             if (dt != null)
             {
@@ -79,11 +80,12 @@ namespace FortRating.Forms
                             Guna2Panel panel = new Guna2Panel
                             {
                                 Name = $"EventPanel+{panelNumber}",
-                                Size = new Size(630, 200),
+                                Size = new Size(400, 350),
                                 Location = new Point(30, 200 * panelNumber + 20),
-                                Dock = DockStyle.Top,
+                                //Dock = DockStyle.Top,
+                                //Anchor = AnchorStyles.Left | AnchorStyles.Top,
                             };
-                            listItems[i] = new EventControl(of, row["name"].ToString(), row["descriptioin"].ToString(), row["dateEvent"].ToString(), Convert.ToInt32(row["points"]));
+                            listItems[i] = new EventControl(of, row["name"].ToString(), row["description"].ToString(), row["dateEvent"].ToString(), Convert.ToInt32(row["points"]));
                             listItems[i].Dock = DockStyle.Top;
 
                             panel.Controls.Add(listItems[i]);
@@ -104,7 +106,7 @@ namespace FortRating.Forms
                     $"SELECT count(*) FROM events " +
                     $"WHERE id = {AppPage.idUser} "
                     :
-                    $"SELECT count(*) FROM jobs " +
+                    $"SELECT count(*) FROM events " +
                     $"WHERE id = {AppPage.idUser} AND concat(name, description, dateEvent, points) LIKE '{searchText}%' ";
 
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
@@ -412,6 +414,12 @@ namespace FortRating.Forms
             EventsPanel.Visible = false;
             guna2PictureBox1.Visible = true;
             backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            AddEvent ae = new AddEvent(of, null);
+            of(ae);
         }
     }
 }

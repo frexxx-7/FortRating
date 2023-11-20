@@ -24,6 +24,11 @@ namespace FortRating.UserControls
             this.description= description;
             this.dateEvent= dateEvent;
             this.points= points;
+
+            NameLabel.Text = name;
+            DescriptionLabel.Text = description;
+            PointsLabel.Text = points.ToString();
+            DateLabel.Text = dateEvent;
         }
     }
 }

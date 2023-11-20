@@ -49,7 +49,7 @@
             this.LoginTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LoginTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LoginTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LoginTextBox.Location = new System.Drawing.Point(56, 113);
+            this.LoginTextBox.Location = new System.Drawing.Point(106, 112);
             this.LoginTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.PasswordChar = '\0';
@@ -69,7 +69,7 @@
             this.NameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NameTextBox.Location = new System.Drawing.Point(56, 282);
+            this.NameTextBox.Location = new System.Drawing.Point(106, 281);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
@@ -89,7 +89,7 @@
             this.SurnameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SurnameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SurnameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SurnameTextBox.Location = new System.Drawing.Point(56, 190);
+            this.SurnameTextBox.Location = new System.Drawing.Point(106, 189);
             this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.PasswordChar = '\0';
@@ -109,7 +109,7 @@
             this.PatronymicTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PatronymicTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PatronymicTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PatronymicTextBox.Location = new System.Drawing.Point(56, 365);
+            this.PatronymicTextBox.Location = new System.Drawing.Point(106, 364);
             this.PatronymicTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PatronymicTextBox.Name = "PatronymicTextBox";
             this.PatronymicTextBox.PasswordChar = '\0';
@@ -128,7 +128,7 @@
             this.GroupComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.GroupComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.GroupComboBox.ItemHeight = 30;
-            this.GroupComboBox.Location = new System.Drawing.Point(56, 459);
+            this.GroupComboBox.Location = new System.Drawing.Point(106, 458);
             this.GroupComboBox.Name = "GroupComboBox";
             this.GroupComboBox.Size = new System.Drawing.Size(503, 36);
             this.GroupComboBox.TabIndex = 13;
@@ -143,7 +143,7 @@
             this.SaveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(12, 631);
+            this.SaveButton.Location = new System.Drawing.Point(32, 610);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(129, 41);
             this.SaveButton.TabIndex = 14;
@@ -155,7 +155,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(322, 46);
+            this.label1.Location = new System.Drawing.Point(350, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(324, 39);
             this.label1.TabIndex = 15;
@@ -171,7 +171,7 @@
             this.AddGroupButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.AddGroupButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddGroupButton.ForeColor = System.Drawing.Color.White;
-            this.AddGroupButton.Location = new System.Drawing.Point(56, 520);
+            this.AddGroupButton.Location = new System.Drawing.Point(106, 525);
             this.AddGroupButton.Name = "AddGroupButton";
             this.AddGroupButton.Size = new System.Drawing.Size(208, 41);
             this.AddGroupButton.TabIndex = 16;
@@ -182,6 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(958, 684);
             this.Controls.Add(this.AddGroupButton);
             this.Controls.Add(this.label1);
