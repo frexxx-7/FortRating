@@ -22,13 +22,12 @@ namespace FortRating.Forms
             InitializeComponent();
             this.of = of;
         }
-        private void loadInfoUser()
+        private void loadAllInfoUser()
         {
-            /*DB db = new DB();
-            string queryInfo = $"SELECT users.*, userInfo.*, concat(address.house, address.street, address.city, address.country) as addressInfo FROM users " +
-                $"left join userInfo on users.idUserInfo = userInfo.id " +
-                $"left join address on userInfo.idAddress = address.id " +
-                $"WHERE users.id = '{AppPage.idUser}'";
+            DB db = new DB();
+            string queryInfo = $"select concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, users.* from students " +
+                $"left join users on users.id = students.idUser " +
+                $"where students.idUser = {AppPage.idUser} ";
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 
             db.openConnection();
@@ -37,11 +36,12 @@ namespace FortRating.Forms
             while (reader.Read())
             {
                 LoginLabel.Text = reader["login"].ToString();
-
+                FIOLabel.Text = reader["FIO"].ToString() != "" ? reader["FIO"].ToString() : "Не указано";
             }
             reader.Close();
 
-            db.closeConnection();*/
+            db.closeConnection();
+
         }
 
         private void EditProfieButton_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace FortRating.Forms
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            loadInfoUser();
+            loadAllInfoUser();
         }
     }
 }

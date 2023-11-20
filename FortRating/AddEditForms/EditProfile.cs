@@ -40,7 +40,48 @@ namespace FortRating.AddEditForms
                 AddGroupButton.Visible = false;
             }
             loadInfoGroups();
+            loadAllInfoUser();
         }
+
+        private void loadAllInfoUser()
+        {
+            DB db = new DB();
+            string queryInfo = idStudent!=null ? $"select students.*, users.* from students " +
+                $"left join users on users.id = students.idUser " +
+                $"where students.idUser = {AppPage.idUser} " :
+                $"select * from users " +
+                $"where id = {AppPage.idUser}";
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                LoginTextBox.Text = reader["login"].ToString();
+                if (idStudent != null)
+                {
+                    NameTextBox.Text = reader["name"].ToString() != "" ? reader["name"].ToString() : "Не указано";
+                    PatronymicTextBox.Text = reader["patronymic"].ToString() != "" ? reader["patronymic"].ToString() : "Не указано";
+                    SurnameTextBox.Text = reader["surname"].ToString() != "" ? reader["surname"].ToString() : "Не указано";
+                    for (int i = 0; i < GroupComboBox.Items.Count; i++)
+                    {
+                        if (reader["idGroup"].ToString() != "")
+                        {
+                            if (Convert.ToInt32((GroupComboBox.Items[i] as FortRating.Classes.ComboBoxItem).Value) == Convert.ToInt32(reader["idGroup"]))
+                            {
+                                GroupComboBox.SelectedIndex = i;
+                            }
+                        }
+                    }
+                }
+            }
+            reader.Close();
+
+            db.closeConnection();
+
+        }
+
         private void loadInfoGroups()
         {
             GroupComboBox.Items.Clear();
@@ -68,12 +109,12 @@ namespace FortRating.AddEditForms
             DB db = new DB();
             if (idStudent == null)
             {
-                MySqlCommand command = new MySqlCommand($"INSERT into students (name, surname, patronymic, idGroup) values(@name, @surname, @patronymic, @idGroup);" +
-                $"where idUser= {AppPage.idUser} ", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"INSERT into students (name, surname, patronymic, idGroup, idUser) values(@name, @surname, @patronymic, @idGroup, @idUser)", db.getConnection());
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@surname", SurnameTextBox.Text);
                 command.Parameters.AddWithValue("@patronymic", PatronymicTextBox.Text);
-                command.Parameters.AddWithValue("@idGroup", PatronymicTextBox.Text);
+                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value);
+                command.Parameters.AddWithValue("@idUser", AppPage.idUser);
 
                 db.openConnection();
 
@@ -90,12 +131,12 @@ namespace FortRating.AddEditForms
             }
             else
             {
-                MySqlCommand command = new MySqlCommand($"update userInfo set name = @name, surname = @surname, patronymic = @patronymic, numberPhone = @numberPhone, numberPassport = @numberPassport, idAddress = @idAddress " +
-                $"where userInfo.id = {2} ", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"update students set name = @name, surname = @surname, patronymic = @patronymic, idGroup = @idGroup " +
+                $"where students.id = {idStudent} ", db.getConnection());
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@surname", SurnameTextBox.Text);
                 command.Parameters.AddWithValue("@patronymic", PatronymicTextBox.Text);
-                command.Parameters.AddWithValue("@idAddress", (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value);
+                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value);
 
                 db.openConnection();
 
@@ -111,7 +152,7 @@ namespace FortRating.AddEditForms
                 db.closeConnection();
             }
 
-            MySqlCommand commandUser = new MySqlCommand($"update users set login = @login, password = @password where id = {AppPage.idUser}", db.getConnection());
+            MySqlCommand commandUser = new MySqlCommand($"update users set login = @login where id = {AppPage.idUser}", db.getConnection());
             commandUser.Parameters.AddWithValue("@login", LoginTextBox.Text);
 
             db.openConnection();
