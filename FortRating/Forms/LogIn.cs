@@ -54,9 +54,9 @@ namespace FortRating
 
                     while (reader.Read())
                     {
-                        Main main = new Main();
-                        Main.idUser = reader[0].ToString();
-                        Main.login = reader[1].ToString();
+                        AppPage main = new AppPage();
+                        AppPage.idUser = reader[0].ToString();
+                        AppPage.login = reader[1].ToString();
                         this.Hide();
                         main.Show();
                         MessageBox.Show("Добро пожаловать");
