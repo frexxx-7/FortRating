@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersControl1));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.LoginLabel = new System.Windows.Forms.Label();
             this.panelAvatar = new Guna.UI2.WinForms.Guna2Panel();
             this.avatarPicture = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.LoginLabel = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.panelAvatar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarPicture)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -52,25 +52,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(605, 248);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.LoginLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(199, 32);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 78);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // LoginLabel
-            // 
-            this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginLabel.Location = new System.Drawing.Point(3, 0);
-            this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(72, 26);
-            this.LoginLabel.TabIndex = 4;
-            this.LoginLabel.Text = "Логин";
             // 
             // panelAvatar
             // 
@@ -90,7 +71,7 @@
             this.avatarPicture.AutoRoundedCorners = true;
             this.avatarPicture.BackColor = System.Drawing.Color.Transparent;
             this.avatarPicture.BorderRadius = 86;
-            this.avatarPicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.avatarPicture.Cursor = System.Windows.Forms.Cursors.Default;
             this.avatarPicture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.avatarPicture.Image = ((System.Drawing.Image)(resources.GetObject("avatarPicture.Image")));
             this.avatarPicture.ImageRotate = 0F;
@@ -101,6 +82,31 @@
             this.avatarPicture.TabIndex = 7;
             this.avatarPicture.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.LoginLabel);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(199, 32);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 78);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginLabel.Location = new System.Drawing.Point(3, 0);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(72, 26);
+            this.LoginLabel.TabIndex = 4;
+            this.LoginLabel.Text = "Логин";
+            this.LoginLabel.Click += new System.EventHandler(this.LoginLabel_Click);
+            this.LoginLabel.MouseLeave += new System.EventHandler(this.LoginLabel_MouseLeave);
+            this.LoginLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginLabel_MouseMove);
+            // 
             // UsersControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,10 +115,10 @@
             this.Name = "UsersControl1";
             this.Size = new System.Drawing.Size(605, 248);
             this.guna2Panel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.panelAvatar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.avatarPicture)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -86,6 +86,10 @@
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\Events\EventsBLL.cs" />
     <Compile Include="Classes\Events\EventsFunc.cs" />
+    <Compile Include="Classes\Students\StudentsBLL.cs" />
+    <Compile Include="Classes\Students\StudentsFunc.cs" />
+    <Compile Include="Classes\Users\UsersBLL.cs" />
+    <Compile Include="Classes\Users\UsersFunc.cs" />
     <Compile Include="Forms\Admin\PerfomanceStudents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +170,12 @@
     <Compile Include="UserControls\EventControl.Designer.cs">
       <DependentUpon>EventControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\StudentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StudentControl.Designer.cs">
+      <DependentUpon>StudentControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UsersControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,6 +239,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\EventControl.resx">
       <DependentUpon>EventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StudentControl.resx">
+      <DependentUpon>StudentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UsersControl1.resx">
       <DependentUpon>UsersControl1.cs</DependentUpon>

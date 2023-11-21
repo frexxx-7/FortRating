@@ -75,7 +75,7 @@ namespace FortRating.Forms
             this.FormBorderStyle = FormBorderStyle.None;
 
             OpenForm of = new OpenForm(OpenChildForm);
-            Profile profile = new Profile(of);
+            Profile profile = new Profile(of, null);
             OpenChildForm(profile);
             loadInfoUserStudent();
         }
@@ -116,7 +116,7 @@ namespace FortRating.Forms
         private void ProfileButton_Click(object sender, EventArgs e)
         {
             OpenForm of = new OpenForm(OpenChildForm);
-            Profile profile = new Profile(of);
+            Profile profile = new Profile(of, null);
             ActiveButton(sender);
             OpenChildForm(profile);
 
