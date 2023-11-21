@@ -1,5 +1,7 @@
 ﻿using FontAwesome.Sharp;
+using FortRating.Classes;
 using FortRating.Forms.Admin;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,14 +25,14 @@ namespace FortRating.Forms
         public delegate void OpenForm(Form childForm);
         public delegate void changeActiveButton(object senderBtn);
         public static changeActiveButton cab;
-
+        private static string idStudent = null;
         private void ActiveButton(object senderBtn)
         {
             if (senderBtn != null)
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(233,233,233                                                           );
+                currentBtn.BackColor = Color.FromArgb(233,233,233);
                 currentBtn.ForeColor = Color.Black;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.Black;
@@ -46,6 +48,26 @@ namespace FortRating.Forms
                 iconCurrentChildForm.IconColor = Color.Black;
             }
         }
+        private void loadInfoUserStudent()
+        {
+            DB db = new DB();
+            string queryInfo = $"select students.id from students " +
+                $"left join users on users.id = students.idUser " +
+                $"where students.idUser = {AppPage.idUser} ";
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                idStudent = reader["id"].ToString();
+            }
+            reader.Close();
+
+            db.closeConnection();
+
+        }
         private void AppPage_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.Sizable;
@@ -55,6 +77,7 @@ namespace FortRating.Forms
             OpenForm of = new OpenForm(OpenChildForm);
             Profile profile = new Profile(of);
             OpenChildForm(profile);
+            loadInfoUserStudent();
         }
         private void DisableButton()
         {

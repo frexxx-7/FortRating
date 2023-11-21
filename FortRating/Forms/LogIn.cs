@@ -44,7 +44,6 @@ namespace FortRating
             if (table.Rows.Count > 0)
             {
                 string queryAccount = $"SELECT id, login FROM users WHERE login = '{LoginTextBox.Text}'";
-                MySqlCommand mySqlCommand = new MySqlCommand(queryAccount, db.getConnection());
 
                 db.openConnection();
 

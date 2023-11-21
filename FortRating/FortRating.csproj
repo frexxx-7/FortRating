@@ -166,6 +166,12 @@
     <Compile Include="UserControls\EventControl.Designer.cs">
       <DependentUpon>EventControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UsersControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UsersControl1.Designer.cs">
+      <DependentUpon>UsersControl1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddEditForms\AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +229,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\EventControl.resx">
       <DependentUpon>EventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UsersControl1.resx">
+      <DependentUpon>UsersControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -155,7 +155,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
         private Guna.UI2.WinForms.Guna2DataGridView PerfomanceDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discipline;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mark;
