@@ -112,12 +112,16 @@
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
+            this.NameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.Location = new System.Drawing.Point(3, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(111, 26);
             this.NameLabel.TabIndex = 3;
             this.NameLabel.Text = "Название";
+            this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
+            this.NameLabel.MouseLeave += new System.EventHandler(this.NameLabel_MouseLeave);
+            this.NameLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NameLabel_MouseMove);
             // 
             // DateLabel
             // 

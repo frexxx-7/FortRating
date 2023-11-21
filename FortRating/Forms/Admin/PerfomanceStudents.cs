@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FortRating.Forms
+namespace FortRating.Forms.Admin
 {
-    public partial class Students : Form
+    public partial class PerfomanceStudents : Form
     {
-        public Students()
+        private AppPage.OpenForm of;
+        public PerfomanceStudents(AppPage.OpenForm of)
         {
             InitializeComponent();
+            this.of = of;
         }
     }
 }

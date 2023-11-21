@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Events));
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.EventsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -47,7 +48,6 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.AddButton = new Guna.UI2.WinForms.Guna2Button();
-            this.EventsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.MainPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -77,6 +77,15 @@
             this.MainPanel.Size = new System.Drawing.Size(967, 380);
             this.MainPanel.TabIndex = 4;
             // 
+            // EventsPanel
+            // 
+            this.EventsPanel.AutoScroll = true;
+            this.EventsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EventsPanel.Location = new System.Drawing.Point(0, 0);
+            this.EventsPanel.Name = "EventsPanel";
+            this.EventsPanel.Size = new System.Drawing.Size(967, 380);
+            this.EventsPanel.TabIndex = 7;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -89,6 +98,7 @@
             // 
             // SearchTextBox
             // 
+            this.SearchTextBox.BorderRadius = 10;
             this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.SearchTextBox.DefaultText = "";
             this.SearchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -289,7 +299,7 @@
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(62, -22);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(261, -22);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(121, 101);
@@ -312,21 +322,12 @@
             this.AddButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Location = new System.Drawing.Point(238, 24);
+            this.AddButton.Location = new System.Drawing.Point(38, 24);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(144, 42);
             this.AddButton.TabIndex = 19;
             this.AddButton.Text = "Добавить";
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // EventsPanel
-            // 
-            this.EventsPanel.AutoScroll = true;
-            this.EventsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EventsPanel.Location = new System.Drawing.Point(0, 0);
-            this.EventsPanel.Name = "EventsPanel";
-            this.EventsPanel.Size = new System.Drawing.Size(967, 380);
-            this.EventsPanel.TabIndex = 7;
             // 
             // Events
             // 

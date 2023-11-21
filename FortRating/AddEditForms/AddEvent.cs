@@ -78,7 +78,7 @@ namespace FortRating.AddEditForms
             }
             else
             {
-                MySqlCommand command = new MySqlCommand($"Update events set name = @name, description = @description, points = @points where id = {idEvent}", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"Update events set name = @name, description = @description, points = @points, dateEvent = @dateEvent where id = {idEvent}", db.getConnection());
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@description", DescriptionTextBox.Text);
                 command.Parameters.AddWithValue("@dateEvent", guna2DateTimePicker1.Value.ToString("dd.MM.yyyy"));

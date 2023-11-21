@@ -1,10 +1,12 @@
 ﻿using FontAwesome.Sharp;
+using FortRating.Forms.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -116,6 +118,46 @@ namespace FortRating.Forms
             Events events = new Events(of);
             ActiveButton(sender);
             OpenChildForm(events);
+        }
+
+        private void InfoRatingButton_Click(object sender, EventArgs e)
+        {
+            OpenForm of = new OpenForm(OpenChildForm);
+            InfoRating ir = new InfoRating();
+            ActiveButton(sender);
+            OpenChildForm(ir);
+        }
+
+        private void YouPerfomance_Click(object sender, EventArgs e)
+        {
+            OpenForm of = new OpenForm(OpenChildForm);
+            YouPerfomance yp = new YouPerfomance();
+            ActiveButton(sender);
+            OpenChildForm(yp);
+        }
+
+        private void UsersButton_Click(object sender, EventArgs e)
+        {
+            OpenForm of = new OpenForm(OpenChildForm);
+            Users users = new Users(of);
+            ActiveButton(sender);
+            OpenChildForm(users);
+        }
+
+        private void StudentsButton_Click(object sender, EventArgs e)
+        {
+            OpenForm of = new OpenForm(OpenChildForm);
+            Students students = new Students(of);
+            ActiveButton(sender);
+            OpenChildForm(students);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            OpenForm of = new OpenForm(OpenChildForm);
+            PerfomanceStudents ps = new PerfomanceStudents(of);
+            ActiveButton(sender);
+            OpenChildForm(ps);
         }
 
         public AppPage()

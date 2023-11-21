@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.PointsLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.DateEvent = new System.Windows.Forms.Label();
+            this.DateEventLabel = new System.Windows.Forms.Label();
             this.EditButton = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -91,9 +91,9 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.NameLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(182, 103);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(191, 103);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(817, 91);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(808, 91);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // flowLayoutPanel2
@@ -102,9 +102,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.Controls.Add(this.DescriptionLabel);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(182, 211);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(191, 211);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(817, 127);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(808, 127);
             this.flowLayoutPanel2.TabIndex = 8;
             // 
             // DescriptionLabel
@@ -151,20 +151,19 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Дата проведения:";
             // 
-            // DateEvent
+            // DateEventLabel
             // 
-            this.DateEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DateEvent.AutoSize = true;
-            this.DateEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateEvent.Location = new System.Drawing.Point(252, 454);
-            this.DateEvent.Name = "DateEvent";
-            this.DateEvent.Size = new System.Drawing.Size(218, 29);
-            this.DateEvent.TabIndex = 11;
-            this.DateEvent.Text = "Дата проведения";
+            this.DateEventLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DateEventLabel.AutoSize = true;
+            this.DateEventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateEventLabel.Location = new System.Drawing.Point(319, 454);
+            this.DateEventLabel.Name = "DateEventLabel";
+            this.DateEventLabel.Size = new System.Drawing.Size(218, 29);
+            this.DateEventLabel.TabIndex = 11;
+            this.DateEventLabel.Text = "Дата проведения";
             // 
             // EditButton
             // 
-            this.EditButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.EditButton.BorderRadius = 5;
             this.EditButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.EditButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -177,6 +176,7 @@
             this.EditButton.Size = new System.Drawing.Size(144, 42);
             this.EditButton.TabIndex = 12;
             this.EditButton.Text = "Изменить";
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // FullInfoEvent
             // 
@@ -184,7 +184,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 619);
             this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.DateEvent);
+            this.Controls.Add(this.DateEventLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.PointsLabel);
@@ -196,6 +196,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FullInfoEvent";
             this.Text = "FullInfoEvent";
+            this.Load += new System.EventHandler(this.FullInfoEvent_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -217,7 +218,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label PointsLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label DateEvent;
+        private System.Windows.Forms.Label DateEventLabel;
         private Guna.UI2.WinForms.Guna2Button EditButton;
     }
 }
