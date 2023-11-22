@@ -15,7 +15,7 @@ namespace FortRating.UserControls
     public partial class StudentControl : UserControl
     {
         private AppPage.OpenForm of;
-        private string idStudent, FIO, group;
+        private string idStudent, FIO, group, idGroup;
         private bool onPrefomance;
 
         private void FIOLabel_MouseLeave(object sender, EventArgs e)
@@ -25,8 +25,8 @@ namespace FortRating.UserControls
 
         private void FIOLabel_Click(object sender, EventArgs e)
         {
-            PerfomanceOneStudent pos = new PerfomanceOneStudent(idStudent, FIO, group);
-            EditPerfomanceOneUser epou = new EditPerfomanceOneUser(of, idStudent, FIO, group);
+            PerfomanceOneStudent pos = new PerfomanceOneStudent(idStudent, FIO, group, idGroup);
+            EditPerfomanceOneUser epou = new EditPerfomanceOneUser(of, idStudent, FIO, group, idGroup);
             if(onPrefomance)
                 of(epou);
             else
@@ -38,7 +38,7 @@ namespace FortRating.UserControls
             FIOLabel.ForeColor = Color.FromArgb(94, 148, 255);
         }
 
-        public StudentControl(AppPage.OpenForm of, string idStudent, string FIO, string group, bool onPerfomance)
+        public StudentControl(AppPage.OpenForm of, string idStudent, string FIO, string group, bool onPerfomance, string idGroup)
         {
             InitializeComponent();
             this.idStudent = idStudent;
@@ -46,6 +46,7 @@ namespace FortRating.UserControls
             this.group = group;
             this.of = of;
             this.onPrefomance = onPerfomance;
+            this.idGroup = idGroup;
 
             FIOLabel.Text = FIO;
             GroupLabel.Text = group;

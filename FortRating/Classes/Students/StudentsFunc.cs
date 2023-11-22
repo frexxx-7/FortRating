@@ -20,13 +20,13 @@ namespace FortRating.Classes.Students
             if (idStudent != null)
             {
                 query = searchText == null ?
-                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name FROM students " +
+                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name, groups.id as idGroup FROM students " +
                     $"left join groups on groups.id = students.idGroup " +
                     $"WHERE idStudent = {idStudent} " +
                     $"ORDER BY idStudent DESC " +
                     $"LIMIT {startRows}, {numberRows};"
                     :
-                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name FROM students " +
+                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name, groups.id as idGroup FROM students " +
                     $"left join groups on groups.id = students.idGroup " +
                     $"WHERE idStudent = {idStudent} AND concat(students.surname,' ', students.name,' ', students.patronymic, groups.name) LIKE '%{searchText}%' " +
                     $"ORDER BY idStudent DESC " +
@@ -36,12 +36,12 @@ namespace FortRating.Classes.Students
             else
             {
                 query = searchText == null ?
-                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name FROM students " +
+                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name, groups.id as idGroup FROM students " +
                     $"left join groups on groups.id = students.idGroup " +
                     $"ORDER BY idStudent DESC " +
                     $"LIMIT {startRows}, {numberRows};"
                     :
-                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name FROM students " +
+                    $"SELECT students.id as idStudent, students.id, concat(students.surname,' ', students.name,' ', students.patronymic) as FIO, groups.name, groups.id as idGroup FROM students " +
                     $"left join groups on groups.id = students.idGroup " +
                     $"WHERE concat(students.surname,' ', students.name,' ', students.patronymic, groups.name) LIKE '%{searchText}%' " +
                     $"ORDER BY idStudent DESC " +

@@ -1,4 +1,5 @@
 ﻿using FortRating.Classes;
+using FortRating.Forms.Admin;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,11 @@ namespace FortRating.AddEditForms
 {
     public partial class AddDisciplines : Form
     {
-        public AddDisciplines()
+        private EditPerfomanceOneUser.LoadInfoPerfomanceDelegate lipd;
+        public AddDisciplines(EditPerfomanceOneUser.LoadInfoPerfomanceDelegate lipd)
         {
             InitializeComponent();
+            this.lipd = lipd;
         }
         private void loadInfoGroups()
         {
@@ -60,6 +63,7 @@ namespace FortRating.AddEditForms
             }
             finally
             {
+                lipd();
                 this.Close();
             }
 

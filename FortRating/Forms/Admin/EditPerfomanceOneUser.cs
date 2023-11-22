@@ -16,12 +16,13 @@ namespace FortRating.Forms.Admin
     public partial class EditPerfomanceOneUser : Form
     {
         private AppPage.OpenForm of;
-        private string idStudent, FIO, group;
+        private string idStudent, FIO, group, idGroup;
         public delegate void LoadInfoPerfomanceDelegate();
 
         private void AddDisciplines_Click(object sender, EventArgs e)
         {
-            new AddDisciplines().Show();
+            LoadInfoPerfomanceDelegate lipd = new LoadInfoPerfomanceDelegate(loadInfoDisciplines);
+            new AddDisciplines(lipd).Show();
         }
 
         private void EditPerfomanceOneUser_Load(object sender, EventArgs e)
@@ -40,7 +41,8 @@ namespace FortRating.Forms.Admin
             PerfomanceDataGrid.Rows.Clear();
             DB db = new DB();
             string queryInfo = $"select disciplines.id, disciplines.name, academicpeerfomance.mark from disciplines " +
-                $"left join academicpeerfomance on academicpeerfomance.idDescipline = disciplines.id and academicpeerfomance.idStudent = {idStudent} ";
+                $"left join academicpeerfomance on academicpeerfomance.idDescipline = disciplines.id and academicpeerfomance.idStudent = {idStudent} " +
+                $"where disciplines.idGroup = {idGroup}";
 
             db.openConnection();
 
@@ -65,13 +67,14 @@ namespace FortRating.Forms.Admin
 
             db.closeConnection();
         }
-        public EditPerfomanceOneUser(AppPage.OpenForm of,string idStudent, string FIO, string group)
+        public EditPerfomanceOneUser(AppPage.OpenForm of,string idStudent, string FIO, string group, string idGroup)
         {
             InitializeComponent();
             this.idStudent = idStudent;
             this.FIO = FIO;
             this.group = group;
             this.of = of;
+            this.idGroup= idGroup;
 
             FIOLabel.Text = FIO;
             GroupLabel.Text = group;

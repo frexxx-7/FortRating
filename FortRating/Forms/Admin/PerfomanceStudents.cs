@@ -81,7 +81,7 @@ namespace FortRating.Forms.Admin
                                 Name = $"UserPanel+{panelNumber}",
                                 Size = new Size(500, 248),
                             };
-                            listItems[i] = new StudentControl(of, row["idStudent"].ToString(), row["FIO"].ToString(), row["name"].ToString(), true);
+                            listItems[i] = new StudentControl(of, row["idStudent"].ToString(), row["FIO"].ToString(), row["name"].ToString(), true, row["idGroup"].ToString());
 
                             listItems[i].Dock = DockStyle.Top;
 
