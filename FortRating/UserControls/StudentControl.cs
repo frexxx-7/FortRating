@@ -26,7 +26,7 @@ namespace FortRating.UserControls
         private void FIOLabel_Click(object sender, EventArgs e)
         {
             PerfomanceOneStudent pos = new PerfomanceOneStudent(idStudent, FIO, group);
-            EditPerfomanceOneUser epou = new EditPerfomanceOneUser(idStudent, FIO, group);
+            EditPerfomanceOneUser epou = new EditPerfomanceOneUser(of, idStudent, FIO, group);
             if(onPrefomance)
                 of(epou);
             else

@@ -64,6 +64,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditForms\AddDisciplines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditForms\AddDisciplines.Designer.cs">
+      <DependentUpon>AddDisciplines.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditForms\AddEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="AddEditForms\AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditForms\EditMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditForms\EditMark.Designer.cs">
+      <DependentUpon>EditMark.cs</DependentUpon>
     </Compile>
     <Compile Include="AddEditForms\EditProfile.cs">
       <SubType>Form</SubType>
@@ -194,11 +206,17 @@
     <Compile Include="UserControls\UsersControl1.Designer.cs">
       <DependentUpon>UsersControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEditForms\AddDisciplines.resx">
+      <DependentUpon>AddDisciplines.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditForms\EditMark.resx">
+      <DependentUpon>EditMark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>

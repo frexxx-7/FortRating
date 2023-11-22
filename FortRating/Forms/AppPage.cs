@@ -25,7 +25,7 @@ namespace FortRating.Forms
         public delegate void OpenForm(Form childForm);
         public delegate void changeActiveButton(object senderBtn);
         public static changeActiveButton cab;
-        private static string idStudent = null;
+        public static string idStudent = null;
         private void ActiveButton(object senderBtn)
         {
             if (senderBtn != null)

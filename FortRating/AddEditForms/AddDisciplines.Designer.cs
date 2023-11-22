@@ -39,6 +39,7 @@
             this.AddGroupButton = new Guna.UI2.WinForms.Guna2Button();
             this.CanceledButton = new Guna.UI2.WinForms.Guna2Button();
             this.GroupComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.headPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(34, 33);
             this.guna2ControlBox1.TabIndex = 1;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // guna2Elipse1
             // 
@@ -123,6 +125,7 @@
             this.AddGroupButton.Size = new System.Drawing.Size(143, 41);
             this.AddGroupButton.TabIndex = 22;
             this.AddGroupButton.Text = "Добавить";
+            this.AddGroupButton.Click += new System.EventHandler(this.AddGroupButton_Click);
             // 
             // CanceledButton
             // 
@@ -139,6 +142,7 @@
             this.CanceledButton.Size = new System.Drawing.Size(143, 41);
             this.CanceledButton.TabIndex = 23;
             this.CanceledButton.Text = "Отмена";
+            this.CanceledButton.Click += new System.EventHandler(this.CanceledButton_Click);
             // 
             // GroupComboBox
             // 
@@ -150,10 +154,21 @@
             this.GroupComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.GroupComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.GroupComboBox.ItemHeight = 30;
-            this.GroupComboBox.Location = new System.Drawing.Point(167, 256);
+            this.GroupComboBox.Location = new System.Drawing.Point(227, 256);
             this.GroupComboBox.Name = "GroupComboBox";
-            this.GroupComboBox.Size = new System.Drawing.Size(673, 36);
+            this.GroupComboBox.Size = new System.Drawing.Size(613, 36);
             this.GroupComboBox.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(47, 263);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 29);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Группа:";
             // 
             // AddDisciplines
             // 
@@ -161,6 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(878, 447);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.GroupComboBox);
             this.Controls.Add(this.CanceledButton);
             this.Controls.Add(this.AddGroupButton);
@@ -169,7 +185,9 @@
             this.Controls.Add(this.headPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddDisciplines";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddDisciplines";
+            this.Load += new System.EventHandler(this.AddDisciplines_Load);
             this.headPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,5 +206,6 @@
         private Guna.UI2.WinForms.Guna2Button AddGroupButton;
         private Guna.UI2.WinForms.Guna2Button CanceledButton;
         private Guna.UI2.WinForms.Guna2ComboBox GroupComboBox;
+        private System.Windows.Forms.Label label2;
     }
 }
