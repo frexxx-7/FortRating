@@ -82,6 +82,12 @@
     <Compile Include="AddEditForms\AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEditForms\AddParticipantEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditForms\AddParticipantEvent.Designer.cs">
+      <DependentUpon>AddParticipantEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditForms\EditMark.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,10 +108,10 @@
     <Compile Include="Classes\Students\StudentsFunc.cs" />
     <Compile Include="Classes\Users\UsersBLL.cs" />
     <Compile Include="Classes\Users\UsersFunc.cs" />
-    <Compile Include="Forms\Admin\EditPerfomanceOneUser.cs">
+    <Compile Include="AddEditForms\EditPerfomanceOneUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\EditPerfomanceOneUser.Designer.cs">
+    <Compile Include="AddEditForms\EditPerfomanceOneUser.Designer.cs">
       <DependentUpon>EditPerfomanceOneUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\PerfomanceOneStudent.cs">
@@ -125,6 +131,12 @@
     </Compile>
     <Compile Include="Forms\Admin\Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\StudentsOnEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\StudentsOnEvent.Designer.cs">
+      <DependentUpon>StudentsOnEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\Users.cs">
       <SubType>Form</SubType>
@@ -215,13 +227,16 @@
     <EmbeddedResource Include="AddEditForms\AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEditForms\AddParticipantEvent.resx">
+      <DependentUpon>AddParticipantEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\EditMark.resx">
       <DependentUpon>EditMark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\EditPerfomanceOneUser.resx">
+    <EmbeddedResource Include="AddEditForms\EditPerfomanceOneUser.resx">
       <DependentUpon>EditPerfomanceOneUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\PerfomanceOneStudent.resx">
@@ -232,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Students.resx">
       <DependentUpon>Students.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\StudentsOnEvent.resx">
+      <DependentUpon>StudentsOnEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>

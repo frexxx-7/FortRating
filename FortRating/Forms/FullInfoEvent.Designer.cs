@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.DateEventLabel = new System.Windows.Forms.Label();
             this.EditButton = new Guna.UI2.WinForms.Guna2Button();
+            this.DeleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.EditParticipant = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -178,11 +180,46 @@
             this.EditButton.Text = "Изменить";
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BorderRadius = 5;
+            this.DeleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteButton.Location = new System.Drawing.Point(199, 24);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(144, 42);
+            this.DeleteButton.TabIndex = 13;
+            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // EditParticipant
+            // 
+            this.EditParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditParticipant.BorderRadius = 5;
+            this.EditParticipant.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.EditParticipant.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EditParticipant.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.EditParticipant.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.EditParticipant.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EditParticipant.ForeColor = System.Drawing.Color.White;
+            this.EditParticipant.Location = new System.Drawing.Point(780, 24);
+            this.EditParticipant.Name = "EditParticipant";
+            this.EditParticipant.Size = new System.Drawing.Size(246, 42);
+            this.EditParticipant.TabIndex = 14;
+            this.EditParticipant.Text = "Изменить участников";
+            this.EditParticipant.Click += new System.EventHandler(this.EditParticipant_Click);
+            // 
             // FullInfoEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 619);
+            this.Controls.Add(this.EditParticipant);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.DateEventLabel);
             this.Controls.Add(this.label5);
@@ -220,5 +257,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label DateEventLabel;
         private Guna.UI2.WinForms.Guna2Button EditButton;
+        private Guna.UI2.WinForms.Guna2Button DeleteButton;
+        private Guna.UI2.WinForms.Guna2Button EditParticipant;
     }
 }

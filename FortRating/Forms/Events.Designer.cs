@@ -74,7 +74,7 @@
             this.MainPanel.Controls.Add(this.EventsPanel);
             this.MainPanel.Location = new System.Drawing.Point(38, 86);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(967, 380);
+            this.MainPanel.Size = new System.Drawing.Size(945, 380);
             this.MainPanel.TabIndex = 4;
             // 
             // EventsPanel
@@ -83,7 +83,7 @@
             this.EventsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EventsPanel.Location = new System.Drawing.Point(0, 0);
             this.EventsPanel.Name = "EventsPanel";
-            this.EventsPanel.Size = new System.Drawing.Size(967, 380);
+            this.EventsPanel.Size = new System.Drawing.Size(945, 380);
             this.EventsPanel.TabIndex = 7;
             // 
             // guna2Panel1
@@ -263,8 +263,7 @@
             // 
             // previousPageLabel
             // 
-            this.previousPageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.previousPageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.previousPageLabel.AutoSize = true;
             this.previousPageLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.previousPageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -279,13 +278,12 @@
             // 
             // nextPageLabel
             // 
-            this.nextPageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nextPageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nextPageLabel.AutoSize = true;
             this.nextPageLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nextPageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nextPageLabel.ForeColor = System.Drawing.Color.Black;
-            this.nextPageLabel.Location = new System.Drawing.Point(893, 498);
+            this.nextPageLabel.Location = new System.Drawing.Point(871, 498);
             this.nextPageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nextPageLabel.Name = "nextPageLabel";
             this.nextPageLabel.Size = new System.Drawing.Size(112, 24);

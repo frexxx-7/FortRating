@@ -72,7 +72,7 @@
             this.nextPageLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nextPageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nextPageLabel.ForeColor = System.Drawing.Color.Black;
-            this.nextPageLabel.Location = new System.Drawing.Point(942, 592);
+            this.nextPageLabel.Location = new System.Drawing.Point(928, 592);
             this.nextPageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nextPageLabel.Name = "nextPageLabel";
             this.nextPageLabel.Size = new System.Drawing.Size(112, 24);
@@ -261,7 +261,7 @@
             this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.Controls.Add(this.SearchTextBox);
             this.guna2Panel1.Controls.Add(this.iconPictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(777, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(763, 9);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(277, 41);
             this.guna2Panel1.TabIndex = 32;

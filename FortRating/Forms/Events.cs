@@ -103,11 +103,10 @@ namespace FortRating.Forms
             double numberRows = 0;
             DB db = new DB();
             string queryInfo = searchText == null ?
-                    $"SELECT count(*) FROM events " +
-                    $"WHERE id = {AppPage.idUser} "
+                    $"SELECT count(*) FROM events "
                     :
                     $"SELECT count(*) FROM events " +
-                    $"WHERE id = {AppPage.idUser} AND concat(name, description, dateEvent, points) LIKE '{searchText}%' ";
+                    $"WHERE concat(name, description, dateEvent, points) LIKE '{searchText}%' ";
 
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
             db.openConnection();

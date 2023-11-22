@@ -1,4 +1,7 @@
 ﻿using FortRating.AddEditForms;
+using FortRating.Classes;
+using FortRating.Forms.Admin;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +19,36 @@ namespace FortRating.Forms
         private string idEvent, name, description, dateEvent;
         private int points;
         private AppPage.OpenForm of;
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand($"delete from events where id = {idEvent}", db.getConnection());
+            db.openConnection();
+
+            try
+            {
+                command.ExecuteNonQuery();
+                MessageBox.Show("Мероприятие удалено");
+                db.closeConnection();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Events events = new Events(of);
+                of(events);
+            }
+
+        }
+
+        private void EditParticipant_Click(object sender, EventArgs e)
+        {
+            StudentsOnEvent soe = new StudentsOnEvent(of, idEvent, name);
+            of(soe);
+        }
 
         private void FullInfoEvent_Load(object sender, EventArgs e)
         {
