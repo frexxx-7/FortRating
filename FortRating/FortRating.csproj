@@ -90,6 +90,18 @@
     <Compile Include="Classes\Students\StudentsFunc.cs" />
     <Compile Include="Classes\Users\UsersBLL.cs" />
     <Compile Include="Classes\Users\UsersFunc.cs" />
+    <Compile Include="Forms\Admin\EditPerfomanceOneUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\EditPerfomanceOneUser.Designer.cs">
+      <DependentUpon>EditPerfomanceOneUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\PerfomanceOneStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\PerfomanceOneStudent.Designer.cs">
+      <DependentUpon>PerfomanceOneStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\PerfomanceStudents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\EditPerfomanceOneUser.resx">
+      <DependentUpon>EditPerfomanceOneUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\PerfomanceOneStudent.resx">
+      <DependentUpon>PerfomanceOneStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\PerfomanceStudents.resx">
       <DependentUpon>PerfomanceStudents.cs</DependentUpon>

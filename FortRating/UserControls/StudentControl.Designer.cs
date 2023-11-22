@@ -104,6 +104,7 @@
             this.FIOLabel.Size = new System.Drawing.Size(64, 26);
             this.FIOLabel.TabIndex = 4;
             this.FIOLabel.Text = "ФИО";
+            this.FIOLabel.Click += new System.EventHandler(this.FIOLabel_Click);
             this.FIOLabel.MouseLeave += new System.EventHandler(this.FIOLabel_MouseLeave);
             this.FIOLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FIOLabel_MouseMove);
             // 
