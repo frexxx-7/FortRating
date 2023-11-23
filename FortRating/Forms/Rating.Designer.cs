@@ -38,7 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.RatingDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PlaceInRatingColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIOStudentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.RatingDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +100,7 @@
             this.RatingDataGrid.ColumnHeadersHeight = 40;
             this.RatingDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PlaceInRatingColumn,
+            this.FIOStudentColumn,
             this.PointsColumn});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -156,6 +159,13 @@
             this.PlaceInRatingColumn.Name = "PlaceInRatingColumn";
             this.PlaceInRatingColumn.ReadOnly = true;
             // 
+            // FIOStudentColumn
+            // 
+            this.FIOStudentColumn.HeaderText = "ФИО";
+            this.FIOStudentColumn.MinimumWidth = 6;
+            this.FIOStudentColumn.Name = "FIOStudentColumn";
+            this.FIOStudentColumn.ReadOnly = true;
+            // 
             // PointsColumn
             // 
             this.PointsColumn.HeaderText = "Кол-во баллов";
@@ -163,12 +173,30 @@
             this.PointsColumn.Name = "PointsColumn";
             this.PointsColumn.ReadOnly = true;
             // 
+            // GroupComboBox
+            // 
+            this.GroupComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.GroupComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GroupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GroupComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GroupComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GroupComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GroupComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GroupComboBox.ItemHeight = 30;
+            this.GroupComboBox.Location = new System.Drawing.Point(618, 22);
+            this.GroupComboBox.Name = "GroupComboBox";
+            this.GroupComboBox.Size = new System.Drawing.Size(265, 36);
+            this.GroupComboBox.TabIndex = 26;
+            this.GroupComboBox.SelectedValueChanged += new System.EventHandler(this.GroupComboBox_SelectedValueChanged);
+            // 
             // Rating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(904, 533);
+            this.Controls.Add(this.GroupComboBox);
             this.Controls.Add(this.RatingDataGrid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PlaceInRatingLabel);
@@ -190,7 +218,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView RatingDataGrid;
+        private Guna.UI2.WinForms.Guna2ComboBox GroupComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlaceInRatingColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIOStudentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PointsColumn;
     }
 }

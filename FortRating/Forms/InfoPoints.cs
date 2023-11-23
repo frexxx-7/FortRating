@@ -96,7 +96,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                perfomancePoint = Convert.ToInt32(reader[0]) * 10;
+                perfomancePoint = !DBNull.Value.Equals(reader[0]) ? Convert.ToInt32(reader[0]) * 10 : 0;
                 PerfomancePointsLabel.Text = perfomancePoint.ToString();
             }
             reader.Close();

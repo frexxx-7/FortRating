@@ -18,13 +18,35 @@ namespace FortRating.Forms
         private int eventPoint, perfomancePoint, additionalPoints;
         private string idGroup;
         private int sumPoints;
-        private string idStudent;
+        private string idStudent, FIOStudent;
+        private string selectedIdGroup;
         public Rating(AppPage.OpenForm of)
         {
             InitializeComponent();
             this.of = of;
 
-            
+            loadInfoGroups();
+        }
+        private void loadInfoGroups()
+        {
+            GroupComboBox.Items.Clear();
+            DB db = new DB();
+            string queryInfo = $"SELECT id, name FROM groups";
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                FortRating.Classes.ComboBoxItem item = new FortRating.Classes.ComboBoxItem();
+                item.Text = $" {reader[1]}";
+                item.Value = reader[0];
+                GroupComboBox.Items.Add(item);
+            }
+            reader.Close();
+
+            db.closeConnection();
         }
         private void loadInfoAdditionalPoints()
         {
@@ -61,12 +83,14 @@ namespace FortRating.Forms
             reader.Close();
             db.closeConnection();
         }
-
-        private void Rating_Load(object sender, EventArgs e)
+        private void loadInfoRating()
         {
             RatingDataGrid.Rows.Clear();
             DB db = new DB();
-            string queryInfo = $"select id from students";
+            string queryInfo = selectedIdGroup == null ? $"select id, concat(students.surname, ' ', students.name, ' ', students.patronymic) from students"
+                :
+                $"select id, concat(students.surname, ' ', students.name, ' ', students.patronymic) from students where idGroup = {selectedIdGroup}"
+                ;
 
             db.openConnection();
 
@@ -78,9 +102,10 @@ namespace FortRating.Forms
                 int counter = 1;
                 while (reader.Read())
                 {
-                    dataDB.Add(new string[2]);
+                    dataDB.Add(new string[3]);
 
                     idStudent = reader[0].ToString();
+                    FIOStudent = reader[1].ToString();
 
                     loadInfoEventPoints();
                     loadInfoGroup();
@@ -90,8 +115,10 @@ namespace FortRating.Forms
                     sumPoints = eventPoint + perfomancePoint + additionalPoints;
 
                     dataDB[dataDB.Count - 1][0] = counter.ToString();
-                    dataDB[dataDB.Count - 1][1] = sumPoints.ToString();
-                    if(idStudent == AppPage.idStudent)
+                    dataDB[dataDB.Count - 1][1] = FIOStudent.ToString();
+                    dataDB[dataDB.Count - 1][2] = sumPoints.ToString();
+
+                    if (idStudent == AppPage.idStudent)
                     {
                         PlaceInRatingLabel.Text = counter.ToString();
                     }
@@ -103,6 +130,16 @@ namespace FortRating.Forms
             }
 
             db.closeConnection();
+        }
+        private void Rating_Load(object sender, EventArgs e)
+        {
+            loadInfoRating();
+        }
+
+        private void GroupComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            selectedIdGroup  = (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value.ToString();
+            loadInfoRating();
         }
 
         private void loadInfoGroup()
