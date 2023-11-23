@@ -18,5 +18,6 @@ namespace FortRating.Forms
             InitializeComponent();
             this.of = of;
         }
+
     }
 }
