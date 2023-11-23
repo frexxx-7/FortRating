@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,12 +48,20 @@ namespace FortRating.Forms
             while (reader.Read())
             {
                 LoginLabel.Text = reader["login"].ToString();
+
+                string ifImage = "";
+                if (ifImage != reader["image"].ToString())
+                {
+                    System.Drawing.Image avatar = (Bitmap)((new ImageConverter()).ConvertFrom(reader["image"]));
+                    avatarPicture.Image = avatar;
+                    avatarPicture.Invalidate();
+                }
             }
             reader.Close();
 
             db.closeConnection();
         }
-        private void loadInfoUserSrudent()
+        private void loadInfoUserStudent()
         {
             DB db = new DB();
             string queryInfo = idAnotherUser == null
@@ -86,10 +95,49 @@ namespace FortRating.Forms
             of(ep);
         }
 
+        private void avatarPicture_Click(object sender, EventArgs e)
+        {
+            if (idAnotherUser== null)
+            {
+                DB db = new DB();
+                MySqlCommand command = new MySqlCommand($"UPDATE users SET image = @image WHERE id = '{AppPage.idUser}'", db.getConnection());
+
+                db.openConnection();
+
+                OpenFileDialog open_dialog = new OpenFileDialog();
+                open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+                if (open_dialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@image", File.ReadAllBytes($"{open_dialog.FileName}"));
+                        command.ExecuteNonQuery();
+
+                        Bitmap image = new Bitmap(open_dialog.FileName);
+                        avatarPicture.Image = image;
+                        avatarPicture.Invalidate();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Выбранное вами изображение больше 16 МБ, выберите другое", "Ошибка изображения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+
+                db.closeConnection();
+            }
+        }
+
         private void Profile_Load(object sender, EventArgs e)
         {
-            loadInfoUserSrudent();
+            loadInfoUserStudent();
             loadInfoUser();
+
+            if(AppPage.idStudent == null)
+            {
+                label1.Visible = false;
+                FIOLabel.Visible = false;
+            }
         }
     }
 }

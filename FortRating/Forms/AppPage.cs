@@ -74,10 +74,22 @@ namespace FortRating.Forms
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = FormBorderStyle.None;
 
+            loadInfoUserStudent();
             OpenForm of = new OpenForm(OpenChildForm);
             Profile profile = new Profile(of, null);
             OpenChildForm(profile);
-            loadInfoUserStudent();
+
+            if(AppPage.login!="admin" && AppPage.login != "Admin")
+            {
+                iconButton1.Visible = false;
+                UsersButton.Visible = false;
+                StudentsButton.Visible = false;
+            }
+            if(AppPage.idStudent == null)
+            {
+                YouPerfomanceButton.Visible = false;
+                InfoPointsButton.Visible = false;
+            }
         }
         private void DisableButton()
         {

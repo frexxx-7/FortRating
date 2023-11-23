@@ -45,9 +45,6 @@
             // ProfileInfoPanel
             // 
             this.ProfileInfoPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ProfileInfoPanel.BorderColor = System.Drawing.Color.Black;
-            this.ProfileInfoPanel.BorderRadius = 20;
-            this.ProfileInfoPanel.BorderThickness = 2;
             this.ProfileInfoPanel.Controls.Add(this.FIOLabel);
             this.ProfileInfoPanel.Controls.Add(this.label1);
             this.ProfileInfoPanel.Controls.Add(this.EditProfieButton);
@@ -59,7 +56,7 @@
             this.ProfileInfoPanel.FillColor = System.Drawing.Color.White;
             this.ProfileInfoPanel.Location = new System.Drawing.Point(0, 0);
             this.ProfileInfoPanel.Name = "ProfileInfoPanel";
-            this.ProfileInfoPanel.Size = new System.Drawing.Size(1021, 236);
+            this.ProfileInfoPanel.Size = new System.Drawing.Size(1021, 436);
             this.ProfileInfoPanel.TabIndex = 0;
             // 
             // FIOLabel
@@ -90,7 +87,7 @@
             // 
             // EditProfieButton
             // 
-            this.EditProfieButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditProfieButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EditProfieButton.BorderRadius = 5;
             this.EditProfieButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.EditProfieButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -98,7 +95,7 @@
             this.EditProfieButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.EditProfieButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EditProfieButton.ForeColor = System.Drawing.Color.White;
-            this.EditProfieButton.Location = new System.Drawing.Point(848, 178);
+            this.EditProfieButton.Location = new System.Drawing.Point(809, 40);
             this.EditProfieButton.Name = "EditProfieButton";
             this.EditProfieButton.Size = new System.Drawing.Size(144, 45);
             this.EditProfieButton.TabIndex = 12;
@@ -159,11 +156,13 @@
             this.avatarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatarPicture.TabIndex = 7;
             this.avatarPicture.TabStop = false;
+            this.avatarPicture.Click += new System.EventHandler(this.avatarPicture_Click);
             // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1021, 563);
             this.Controls.Add(this.ProfileInfoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -25,8 +25,7 @@ namespace FortRating.UserControls
             this.login = login;
 
             LoginLabel.Text = login;
-            if(image!=null)
-                avatarPicture.Image = image;
+            
         }
 
         private void LoginLabel_MouseMove(object sender, MouseEventArgs e)
@@ -37,6 +36,15 @@ namespace FortRating.UserControls
         private void LoginLabel_MouseLeave(object sender, EventArgs e)
         {
             LoginLabel.ForeColor = Color.Black;
+        }
+
+        private void UsersControl1_Load(object sender, EventArgs e)
+        {
+            if (image != null)
+            {
+                avatarPicture.Image = image;
+                avatarPicture.Invalidate();
+            }
         }
 
         private void LoginLabel_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using FortRating.AddEditForms;
+﻿using FontAwesome.Sharp;
+using FortRating.AddEditForms;
 using FortRating.Classes;
 using FortRating.Classes.Events;
 using FortRating.UserControls;
@@ -14,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace FortRating.Forms
 {
@@ -279,6 +281,10 @@ namespace FortRating.Forms
             EventsPanel.Visible = false;
             guna2PictureBox1.Visible = true;
             backgroundWorker1.RunWorkerAsync();
+            if (AppPage.login != "admin" && AppPage.login != "Admin")
+            {
+                AddButton.Visible = false;
+            }
         }
 
         private void nextPageLabel_Click(object sender, EventArgs e)

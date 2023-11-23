@@ -114,6 +114,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "UsersControl1";
             this.Size = new System.Drawing.Size(605, 248);
+            this.Load += new System.EventHandler(this.UsersControl1_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.panelAvatar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.avatarPicture)).EndInit();

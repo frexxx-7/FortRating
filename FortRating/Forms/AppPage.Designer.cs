@@ -41,7 +41,7 @@
             this.StudentsButton = new FontAwesome.Sharp.IconButton();
             this.UsersButton = new FontAwesome.Sharp.IconButton();
             this.InfoPointsButton = new FontAwesome.Sharp.IconButton();
-            this.YouPerfomance = new FontAwesome.Sharp.IconButton();
+            this.YouPerfomanceButton = new FontAwesome.Sharp.IconButton();
             this.EventsButton = new FontAwesome.Sharp.IconButton();
             this.RatingButton = new FontAwesome.Sharp.IconButton();
             this.ProfileButton = new FontAwesome.Sharp.IconButton();
@@ -143,7 +143,7 @@
             this.panelMenu.Controls.Add(this.StudentsButton);
             this.panelMenu.Controls.Add(this.UsersButton);
             this.panelMenu.Controls.Add(this.InfoPointsButton);
-            this.panelMenu.Controls.Add(this.YouPerfomance);
+            this.panelMenu.Controls.Add(this.YouPerfomanceButton);
             this.panelMenu.Controls.Add(this.EventsButton);
             this.panelMenu.Controls.Add(this.RatingButton);
             this.panelMenu.Controls.Add(this.ProfileButton);
@@ -250,28 +250,28 @@
             this.InfoPointsButton.UseVisualStyleBackColor = true;
             this.InfoPointsButton.Click += new System.EventHandler(this.InfoRatingButton_Click);
             // 
-            // YouPerfomance
+            // YouPerfomanceButton
             // 
-            this.YouPerfomance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.YouPerfomance.Dock = System.Windows.Forms.DockStyle.Top;
-            this.YouPerfomance.FlatAppearance.BorderSize = 0;
-            this.YouPerfomance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.YouPerfomance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.YouPerfomance.ForeColor = System.Drawing.Color.Black;
-            this.YouPerfomance.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
-            this.YouPerfomance.IconColor = System.Drawing.Color.Black;
-            this.YouPerfomance.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.YouPerfomance.IconSize = 30;
-            this.YouPerfomance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.YouPerfomance.Location = new System.Drawing.Point(0, 308);
-            this.YouPerfomance.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
-            this.YouPerfomance.Name = "YouPerfomance";
-            this.YouPerfomance.Size = new System.Drawing.Size(343, 55);
-            this.YouPerfomance.TabIndex = 12;
-            this.YouPerfomance.Text = "Ваша успеваемость";
-            this.YouPerfomance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.YouPerfomance.UseVisualStyleBackColor = true;
-            this.YouPerfomance.Click += new System.EventHandler(this.YouPerfomance_Click);
+            this.YouPerfomanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.YouPerfomanceButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.YouPerfomanceButton.FlatAppearance.BorderSize = 0;
+            this.YouPerfomanceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.YouPerfomanceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.YouPerfomanceButton.ForeColor = System.Drawing.Color.Black;
+            this.YouPerfomanceButton.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
+            this.YouPerfomanceButton.IconColor = System.Drawing.Color.Black;
+            this.YouPerfomanceButton.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.YouPerfomanceButton.IconSize = 30;
+            this.YouPerfomanceButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.YouPerfomanceButton.Location = new System.Drawing.Point(0, 308);
+            this.YouPerfomanceButton.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.YouPerfomanceButton.Name = "YouPerfomanceButton";
+            this.YouPerfomanceButton.Size = new System.Drawing.Size(343, 55);
+            this.YouPerfomanceButton.TabIndex = 12;
+            this.YouPerfomanceButton.Text = "Ваша успеваемость";
+            this.YouPerfomanceButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.YouPerfomanceButton.UseVisualStyleBackColor = true;
+            this.YouPerfomanceButton.Click += new System.EventHandler(this.YouPerfomance_Click);
             // 
             // EventsButton
             // 
@@ -418,7 +418,7 @@
         private FontAwesome.Sharp.IconButton ProfileButton;
         private FontAwesome.Sharp.IconButton RatingButton;
         private FontAwesome.Sharp.IconButton EventsButton;
-        private FontAwesome.Sharp.IconButton YouPerfomance;
+        private FontAwesome.Sharp.IconButton YouPerfomanceButton;
         private FontAwesome.Sharp.IconButton InfoPointsButton;
         private FontAwesome.Sharp.IconButton StudentsButton;
         private FontAwesome.Sharp.IconButton UsersButton;

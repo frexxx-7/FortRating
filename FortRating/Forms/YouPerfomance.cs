@@ -31,7 +31,7 @@ namespace FortRating.Forms
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 
             db.openConnection();
-
+            MessageBox.Show(queryInfo);
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {

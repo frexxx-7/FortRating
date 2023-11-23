@@ -32,11 +32,7 @@ namespace FortRating.AddEditForms
 
         private void EditProfile_Load(object sender, EventArgs e)
         {
-            if(AppPage.login == "admin" || AppPage.login == "Admin")
-            {
-                AddGroupButton.Visible = true;
-            }
-            else
+            if(AppPage.login != "admin" && AppPage.login != "Admin")
             {
                 AddGroupButton.Visible = false;
             }

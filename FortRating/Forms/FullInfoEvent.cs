@@ -1,4 +1,5 @@
-﻿using FortRating.AddEditForms;
+﻿using FontAwesome.Sharp;
+using FortRating.AddEditForms;
 using FortRating.Classes;
 using FortRating.Forms.Admin;
 using MySql.Data.MySqlClient;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace FortRating.Forms
 {
@@ -56,6 +58,12 @@ namespace FortRating.Forms
             DescriptionLabel.Text = description;
             DateEventLabel.Text = dateEvent;
             PointsLabel.Text = points.ToString();
+            if (AppPage.login != "admin" && AppPage.login != "Admin")
+            {
+                EditButton.Visible = false;
+                DeleteButton.Visible = false;
+                EditParticipant.Visible = false;
+            }
         }
 
         private void EditButton_Click(object sender, EventArgs e)
