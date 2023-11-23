@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.PerfomanceDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.IdDisciplineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PerfomanceDataGrid)).BeginInit();
@@ -74,6 +75,7 @@
             this.PerfomanceDataGrid.ColumnHeadersHeight = 40;
             this.PerfomanceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.PerfomanceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdDisciplineColumn,
             this.Discipline,
             this.Mark});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -125,6 +127,13 @@
             this.PerfomanceDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.PerfomanceDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // IdDisciplineColumn
+            // 
+            this.IdDisciplineColumn.HeaderText = "Код дисциплины";
+            this.IdDisciplineColumn.MinimumWidth = 6;
+            this.IdDisciplineColumn.Name = "IdDisciplineColumn";
+            this.IdDisciplineColumn.Visible = false;
+            // 
             // Discipline
             // 
             this.Discipline.HeaderText = "Дисциплина";
@@ -158,6 +167,7 @@
 
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView PerfomanceDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDisciplineColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discipline;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mark;
     }

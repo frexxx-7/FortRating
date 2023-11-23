@@ -9,19 +9,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FortRating.Forms.Admin.AdditionalPoints;
 
 namespace FortRating.Forms
 {
-    public partial class InfoRating : Form
+    public partial class InfoPoints : Form
     {
-        private int eventPoint, perfomanceEvg;
+        private int eventPoint, perfomancePoint, additionalPoints;
         private string idGroup;
-        public InfoRating()
+        public InfoPoints()
         {
             InitializeComponent();
             loadInfoEventPoints();
             loadInfoGroup();
             loadInfoPerfomancePoints();
+            loadInfoAdditionalPoints();
+
+            SumPointsLabel.Text = (eventPoint + perfomancePoint + additionalPoints).ToString();
+        }
+        private void loadInfoAdditionalPoints()
+        {
+            DB db = new DB();
+            string queryInfo = $"select sum(points) from additionalpoints " +
+                $"where idStudent = {AppPage.idStudent}";
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                additionalPoints = Convert.ToInt32(reader[0]);
+                AdditionalPointsLabel.Text = additionalPoints.ToString();
+            }
+            reader.Close();
+            db.closeConnection();
         }
         private void loadInfoEventPoints()
         {
@@ -74,7 +96,8 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                perfomanceEvg = Convert.ToInt32(reader[0]);
+                perfomancePoint = Convert.ToInt32(reader[0]) * 10;
+                PerfomancePointsLabel.Text = perfomancePoint.ToString();
             }
             reader.Close();
             db.closeConnection();

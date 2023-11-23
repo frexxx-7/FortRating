@@ -64,6 +64,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditForms\AddAdditionalPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditForms\AddAdditionalPoints.Designer.cs">
+      <DependentUpon>AddAdditionalPoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditForms\AddDisciplines.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     <Compile Include="AddEditForms\EditPerfomanceOneUser.Designer.cs">
       <DependentUpon>EditPerfomanceOneUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\AdditionalPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdditionalPoints.Designer.cs">
+      <DependentUpon>AdditionalPoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\PerfomanceOneStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,11 +168,11 @@
     <Compile Include="Forms\FullInfoEvent.Designer.cs">
       <DependentUpon>FullInfoEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InfoRating.cs">
+    <Compile Include="Forms\InfoPoints.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InfoRating.Designer.cs">
-      <DependentUpon>InfoRating.cs</DependentUpon>
+    <Compile Include="Forms\InfoPoints.Designer.cs">
+      <DependentUpon>InfoPoints.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LogIn.cs">
       <SubType>Form</SubType>
@@ -218,6 +230,9 @@
     <Compile Include="UserControls\UsersControl1.Designer.cs">
       <DependentUpon>UsersControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEditForms\AddAdditionalPoints.resx">
+      <DependentUpon>AddAdditionalPoints.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\AddDisciplines.resx">
       <DependentUpon>AddDisciplines.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditForms\EditPerfomanceOneUser.resx">
       <DependentUpon>EditPerfomanceOneUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdditionalPoints.resx">
+      <DependentUpon>AdditionalPoints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\PerfomanceOneStudent.resx">
       <DependentUpon>PerfomanceOneStudent.cs</DependentUpon>
@@ -260,8 +278,8 @@
     <EmbeddedResource Include="Forms\FullInfoEvent.resx">
       <DependentUpon>FullInfoEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InfoRating.resx">
-      <DependentUpon>InfoRating.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InfoPoints.resx">
+      <DependentUpon>InfoPoints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

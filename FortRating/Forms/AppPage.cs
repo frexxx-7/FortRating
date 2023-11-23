@@ -146,7 +146,7 @@ namespace FortRating.Forms
         private void InfoRatingButton_Click(object sender, EventArgs e)
         {
             OpenForm of = new OpenForm(OpenChildForm);
-            InfoRating ir = new InfoRating();
+            InfoPoints ir = new InfoPoints();
             ActiveButton(sender);
             OpenChildForm(ir);
         }

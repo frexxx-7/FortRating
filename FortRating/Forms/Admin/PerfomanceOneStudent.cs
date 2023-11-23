@@ -15,19 +15,26 @@ namespace FortRating.Forms.Admin
     public partial class PerfomanceOneStudent : Form
     {
         private string idStudent, FIO, group, idGroup;
+        private AppPage.OpenForm of;
+        private void AdditionalButton_Click(object sender, EventArgs e)
+        {
+            AdditionalPoints aap = new AdditionalPoints();
+            of(aap);
+        }
 
         private void PerfomanceOneStudent_Load(object sender, EventArgs e)
         {
             loadInfoDisciplines();
         }
 
-        public PerfomanceOneStudent(string idStudent, string FIO, string group, string idGroup)
+        public PerfomanceOneStudent(string idStudent, string FIO, string group, string idGroup, AppPage.OpenForm of)
         {
             InitializeComponent();
             this.idStudent = idStudent;
             this.FIO = FIO;
             this.group = group;
             this.idGroup = idGroup;
+            this.of = of;
 
             FIOLabel.Text = FIO;
             GroupLabel.Text = group;
