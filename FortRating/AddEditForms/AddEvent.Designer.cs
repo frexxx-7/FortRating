@@ -32,9 +32,9 @@
             this.PointsTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.NameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.DescriptionTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.AddButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.IndicatorComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -116,33 +116,6 @@
             this.DescriptionTextBox.Size = new System.Drawing.Size(762, 192);
             this.DescriptionTextBox.TabIndex = 2;
             // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.Black;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(371, 499);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(522, 43);
-            this.guna2DateTimePicker1.TabIndex = 4;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 11, 20, 22, 31, 32, 912);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(58, 502);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 29);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Дата проведения:";
-            // 
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -160,15 +133,45 @@
             this.AddButton.Text = "Добавить";
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(60, 503);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(269, 25);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Наименование показателя:";
+            // 
+            // IndicatorComboBox
+            // 
+            this.IndicatorComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.IndicatorComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.IndicatorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IndicatorComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.IndicatorComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.IndicatorComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.IndicatorComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.IndicatorComboBox.ItemHeight = 30;
+            this.IndicatorComboBox.Items.AddRange(new object[] {
+            "Научно-иследовательский показатель",
+            "Общественный показатель",
+            "Спортивный показатель"});
+            this.IndicatorComboBox.Location = new System.Drawing.Point(335, 492);
+            this.IndicatorComboBox.Name = "IndicatorComboBox";
+            this.IndicatorComboBox.Size = new System.Drawing.Size(613, 36);
+            this.IndicatorComboBox.TabIndex = 25;
+            // 
             // AddEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1007, 689);
-            this.Controls.Add(this.AddButton);
+            this.Controls.Add(this.IndicatorComboBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.PointsTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.DescriptionTextBox);
@@ -187,8 +190,8 @@
         private Guna.UI2.WinForms.Guna2TextBox PointsTextBox;
         private Guna.UI2.WinForms.Guna2TextBox NameTextBox;
         private Guna.UI2.WinForms.Guna2TextBox DescriptionTextBox;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button AddButton;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ComboBox IndicatorComboBox;
     }
 }

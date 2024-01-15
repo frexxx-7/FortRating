@@ -95,9 +95,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(28, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 29);
+            this.label2.Size = new System.Drawing.Size(264, 29);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Баллы за успеваемость:";
+            this.label2.Text = "Учебный показатель:";
             // 
             // label1
             // 
@@ -130,7 +130,7 @@
             this.AdditionalPointsLabel.TabIndex = 23;
             this.AdditionalPointsLabel.Text = "Дополнительные баллы";
             // 
-            // InfoRating
+            // InfoPoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,7 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "InfoRating";
+            this.Name = "InfoPoints";
             this.Text = "InfoRating";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,7 +18,7 @@ namespace FortRating.Forms
 {
     public partial class FullInfoEvent : Form
     {
-        private string idEvent, name, description, dateEvent;
+        private string idEvent, name, description, indicatorName;
         private int points;
         private AppPage.OpenForm of;
 
@@ -56,7 +56,7 @@ namespace FortRating.Forms
         {
             NameLabel.Text = name;
             DescriptionLabel.Text = description;
-            DateEventLabel.Text = dateEvent;
+            IndicatorNameEventLabel.Text = indicatorName;
             PointsLabel.Text = points.ToString();
             if (AppPage.login != "admin" && AppPage.login != "Admin")
             {
@@ -72,7 +72,7 @@ namespace FortRating.Forms
             of(ae);
         }
 
-        public FullInfoEvent(string idEvent, string name, string description, string dateEvent, int points, AppPage.OpenForm of)
+        public FullInfoEvent(string idEvent, string name, string description, string indicatorName, int points, AppPage.OpenForm of)
         {
             InitializeComponent();
             this.idEvent = idEvent;
@@ -80,7 +80,7 @@ namespace FortRating.Forms
             this.description = description;
             this.points = points;
             this.of = of;
-            this.dateEvent = dateEvent;
+            this.indicatorName = indicatorName;
         }
     }
 }

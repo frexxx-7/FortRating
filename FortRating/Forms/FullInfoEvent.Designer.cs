@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.PointsLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.DateEventLabel = new System.Windows.Forms.Label();
+            this.IndicatorNameEventLabel = new System.Windows.Forms.Label();
             this.EditButton = new Guna.UI2.WinForms.Guna2Button();
             this.DeleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.EditParticipant = new Guna.UI2.WinForms.Guna2Button();
@@ -149,20 +149,20 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(21, 454);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(225, 29);
+            this.label5.Size = new System.Drawing.Size(158, 29);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Дата проведения:";
+            this.label5.Text = "Показатель:";
             // 
-            // DateEventLabel
+            // IndicatorNameEventLabel
             // 
-            this.DateEventLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DateEventLabel.AutoSize = true;
-            this.DateEventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateEventLabel.Location = new System.Drawing.Point(319, 454);
-            this.DateEventLabel.Name = "DateEventLabel";
-            this.DateEventLabel.Size = new System.Drawing.Size(218, 29);
-            this.DateEventLabel.TabIndex = 11;
-            this.DateEventLabel.Text = "Дата проведения";
+            this.IndicatorNameEventLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.IndicatorNameEventLabel.AutoSize = true;
+            this.IndicatorNameEventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IndicatorNameEventLabel.Location = new System.Drawing.Point(194, 454);
+            this.IndicatorNameEventLabel.Name = "IndicatorNameEventLabel";
+            this.IndicatorNameEventLabel.Size = new System.Drawing.Size(151, 29);
+            this.IndicatorNameEventLabel.TabIndex = 11;
+            this.IndicatorNameEventLabel.Text = "Показатель";
             // 
             // EditButton
             // 
@@ -222,7 +222,7 @@
             this.Controls.Add(this.EditParticipant);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.DateEventLabel);
+            this.Controls.Add(this.IndicatorNameEventLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.PointsLabel);
@@ -256,7 +256,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label PointsLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label DateEventLabel;
+        private System.Windows.Forms.Label IndicatorNameEventLabel;
         private Guna.UI2.WinForms.Guna2Button EditButton;
         private Guna.UI2.WinForms.Guna2Button DeleteButton;
         private Guna.UI2.WinForms.Guna2Button EditParticipant;

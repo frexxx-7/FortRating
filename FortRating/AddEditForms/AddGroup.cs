@@ -24,8 +24,10 @@ namespace FortRating.AddEditForms
         private void AddGroupButton_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand($"INSERT into groups (name) values(@name)", db.getConnection());
+            MySqlCommand command = new MySqlCommand($"INSERT into groups (name, academicYear, speciality) values(@name, @academicYear, @speciality)", db.getConnection());
             command.Parameters.AddWithValue("@name", NameTextBox.Text);
+            command.Parameters.AddWithValue("@academicYear", YearComboBox.SelectedItem);
+            command.Parameters.AddWithValue("@speciality", SpecialityTextBox.Text);
             db.openConnection();
 
             try

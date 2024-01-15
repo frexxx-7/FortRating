@@ -101,7 +101,7 @@
             this.SaveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(28, 322);
+            this.SaveButton.Location = new System.Drawing.Point(28, 349);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(159, 42);
             this.SaveButton.TabIndex = 14;
@@ -133,7 +133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(821, 376);
+            this.ClientSize = new System.Drawing.Size(821, 403);
             this.Controls.Add(this.headPanel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.MarkTextBox);

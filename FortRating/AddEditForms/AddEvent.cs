@@ -44,7 +44,16 @@ namespace FortRating.AddEditForms
                 NameTextBox.Text = reader["name"].ToString();
                 DescriptionTextBox.Text = reader["description"].ToString();
                 PointsTextBox.Text = reader["points"].ToString();
-                guna2DateTimePicker1.Value = Convert.ToDateTime(reader["dateEvent"].ToString());
+                for (int i = 0; i < IndicatorComboBox.Items.Count; i++)
+                {
+                    if (reader["indicatorName"].ToString() != "")
+                    {
+                        if (IndicatorComboBox.Items[i].ToString() == reader["indicatorName"].ToString())
+                        {
+                            IndicatorComboBox.SelectedIndex = i;
+                        }
+                    }
+                }
             }
             reader.Close();
 
@@ -55,10 +64,10 @@ namespace FortRating.AddEditForms
             DB db = new DB();
             if (idEvent == null)
             {
-                MySqlCommand command = new MySqlCommand($"INSERT into events (name, description, dateEvent, points) values(@name, @description, @dateEvent, @points)", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"INSERT into events (name, description, indicatorName, points) values(@name, @description, @indicatorName, @points)", db.getConnection());
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@description", DescriptionTextBox.Text);
-                command.Parameters.AddWithValue("@dateEvent", guna2DateTimePicker1.Value.ToString("dd.MM.yyyy"));
+                command.Parameters.AddWithValue("@indicatorName", IndicatorComboBox.SelectedItem);
                 command.Parameters.AddWithValue("@points", PointsTextBox.Text);
                 db.openConnection();
 
@@ -78,10 +87,10 @@ namespace FortRating.AddEditForms
             }
             else
             {
-                MySqlCommand command = new MySqlCommand($"Update events set name = @name, description = @description, points = @points, dateEvent = @dateEvent where id = {idEvent}", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"Update events set name = @name, description = @description, points = @points, indicatorName = @indicatorName where id = {idEvent}", db.getConnection());
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@description", DescriptionTextBox.Text);
-                command.Parameters.AddWithValue("@dateEvent", guna2DateTimePicker1.Value.ToString("dd.MM.yyyy"));
+                command.Parameters.AddWithValue("@indicatorName", IndicatorComboBox.SelectedItem);
                 command.Parameters.AddWithValue("@points", PointsTextBox.Text);
                 db.openConnection();
 

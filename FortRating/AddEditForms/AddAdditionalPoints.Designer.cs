@@ -38,6 +38,7 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.DescriptionTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.headPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             this.PointsTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PointsTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PointsTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PointsTextBox.Location = new System.Drawing.Point(124, 159);
+            this.PointsTextBox.Location = new System.Drawing.Point(124, 141);
             this.PointsTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PointsTextBox.Name = "PointsTextBox";
             this.PointsTextBox.PasswordChar = '\0';
@@ -106,7 +107,7 @@
             this.AddButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Location = new System.Drawing.Point(12, 291);
+            this.AddButton.Location = new System.Drawing.Point(12, 454);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(143, 41);
             this.AddButton.TabIndex = 24;
@@ -123,7 +124,7 @@
             this.CanceledButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.CanceledButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CanceledButton.ForeColor = System.Drawing.Color.White;
-            this.CanceledButton.Location = new System.Drawing.Point(709, 291);
+            this.CanceledButton.Location = new System.Drawing.Point(709, 454);
             this.CanceledButton.Name = "CanceledButton";
             this.CanceledButton.Size = new System.Drawing.Size(143, 41);
             this.CanceledButton.TabIndex = 25;
@@ -145,12 +146,36 @@
             this.guna2DragControl1.TargetControl = this.headPanel;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DescriptionTextBox.DefaultText = "";
+            this.DescriptionTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.DescriptionTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.DescriptionTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DescriptionTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DescriptionTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DescriptionTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DescriptionTextBox.Location = new System.Drawing.Point(124, 205);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.PasswordChar = '\0';
+            this.DescriptionTextBox.PlaceholderText = "Описание";
+            this.DescriptionTextBox.SelectedText = "";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(638, 192);
+            this.DescriptionTextBox.TabIndex = 26;
+            // 
             // AddAdditionalPoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(873, 344);
+            this.ClientSize = new System.Drawing.Size(873, 507);
+            this.Controls.Add(this.DescriptionTextBox);
             this.Controls.Add(this.CanceledButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label1);
@@ -177,5 +202,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2TextBox DescriptionTextBox;
     }
 }

@@ -20,6 +20,7 @@ namespace FortRating.Forms
         private int sumPoints;
         private string idStudent, FIOStudent;
         private string selectedIdGroup;
+        
         public Rating(AppPage.OpenForm of)
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace FortRating.Forms
         {
             GroupComboBox.Items.Clear();
             DB db = new DB();
-            string queryInfo = $"SELECT id, name FROM groups";
+            string queryInfo = $"SELECT id, name, academicYear FROM groups";
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 
             db.openConnection();
@@ -40,7 +41,7 @@ namespace FortRating.Forms
             while (reader.Read())
             {
                 FortRating.Classes.ComboBoxItem item = new FortRating.Classes.ComboBoxItem();
-                item.Text = $" {reader[1]}";
+                item.Text = $" {reader[1]} {reader[2]}";
                 item.Value = reader[0];
                 GroupComboBox.Items.Add(item);
             }
@@ -87,11 +88,15 @@ namespace FortRating.Forms
         {
             RatingDataGrid.Rows.Clear();
             DB db = new DB();
-            string queryInfo = selectedIdGroup == null ? $"select id, concat(students.surname, ' ', students.name, ' ', students.patronymic) from students"
-                :
-                $"select id, concat(students.surname, ' ', students.name, ' ', students.patronymic) from students where idGroup = {selectedIdGroup}"
-                ;
-
+            string queryInfo = null;
+            if (selectedIdGroup == null)
+            {
+                queryInfo = $"select id, concat(students.surname, ' ', students.name, ' ', students.patronymic) from students";
+            }
+            else
+            {
+                queryInfo = $"select id, concat(students.surname, ' ', students.name, ' ', students.patronymic) from students where idGroup = {selectedIdGroup}";
+            }
             db.openConnection();
 
             using (MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection()))
@@ -133,6 +138,14 @@ namespace FortRating.Forms
         }
         private void Rating_Load(object sender, EventArgs e)
         {
+            loadInfoRating();
+            guna2CheckBox1.Checked = true;
+        }
+
+        private void guna2CheckBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            GroupComboBox.Enabled = !GroupComboBox.Enabled;
+            selectedIdGroup = null;
             loadInfoRating();
         }
 

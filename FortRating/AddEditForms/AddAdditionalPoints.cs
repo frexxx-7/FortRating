@@ -26,9 +26,10 @@ namespace FortRating.AddEditForms
         private void AddButton_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand($"INSERT into additionalpoints (idStudent, points) values (@idStudent, @points)", db.getConnection());
+            MySqlCommand command = new MySqlCommand($"INSERT into additionalpoints (idStudent, points, description) values (@idStudent, @points, @description)", db.getConnection());
             command.Parameters.AddWithValue("@idStudent", AppPage.idStudent);
             command.Parameters.AddWithValue("@points", PointsTextBox.Text);
+            command.Parameters.AddWithValue("@description", DescriptionTextBox.Text);
             db.openConnection();
 
             try

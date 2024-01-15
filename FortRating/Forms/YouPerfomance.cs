@@ -1,4 +1,5 @@
 ﻿using FortRating.Classes;
+using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace FortRating.Forms
     public partial class YouPerfomance : Form
     {
         private string idGroup;
+        private int selectSemester;
         public YouPerfomance()
         {
             InitializeComponent();
@@ -31,7 +33,6 @@ namespace FortRating.Forms
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 
             db.openConnection();
-            MessageBox.Show(queryInfo);
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
@@ -45,9 +46,14 @@ namespace FortRating.Forms
         {
             PerfomanceDataGrid.Rows.Clear();
             DB db = new DB();
-            string queryInfo = $"select disciplines.id, disciplines.name, academicpeerfomance.mark from disciplines " +
+            string queryInfo = selectSemester==0 ? $"select disciplines.id, disciplines.name, academicpeerfomance.mark from disciplines " +
                 $"left join academicpeerfomance on academicpeerfomance.idDescipline = disciplines.id and academicpeerfomance.idStudent = {AppPage.idStudent} " +
-                $"where disciplines.idGroup = {idGroup}";
+                $"where disciplines.idGroup = {idGroup}"
+                :
+                $"select disciplines.id, disciplines.name, academicpeerfomance.mark from disciplines " +
+                $"left join academicpeerfomance on academicpeerfomance.idDescipline = disciplines.id and academicpeerfomance.idStudent = {AppPage.idStudent} " +
+                $"where disciplines.idGroup = {idGroup} and academicpeerfomance.semester = {selectSemester}"
+                ;
 
             db.openConnection();
 
@@ -71,6 +77,27 @@ namespace FortRating.Forms
             }
 
             db.closeConnection();
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectSemester = Convert.ToInt32(guna2ComboBox1.SelectedItem);
+            loadInfoDisciplines();
+        }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            guna2ComboBox1.Enabled = !guna2ComboBox1.Enabled;
+            if (guna2CheckBox1.Checked)
+                selectSemester = 0;
+            else
+                selectSemester = Convert.ToInt32(guna2ComboBox1.SelectedItem);
+            loadInfoDisciplines();
+        }
+
+        private void YouPerfomance_Load(object sender, EventArgs e)
+        {
+            guna2CheckBox1.Checked = true;
         }
     }
 }

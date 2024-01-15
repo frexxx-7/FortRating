@@ -87,7 +87,7 @@ namespace FortRating.Forms
                                 //Dock = DockStyle.Top,
                                 //Anchor = AnchorStyles.Left | AnchorStyles.Top,
                             };
-                            listItems[i] = new EventControl(of, row["id"].ToString(), row["name"].ToString(), row["description"].ToString(), row["dateEvent"].ToString(), Convert.ToInt32(row["points"]));
+                            listItems[i] = new EventControl(of, row["id"].ToString(), row["name"].ToString(), row["description"].ToString(), row["indicatorName"].ToString(), Convert.ToInt32(row["points"]));
                             listItems[i].Dock = DockStyle.Top;
 
                             panel.Controls.Add(listItems[i]);
