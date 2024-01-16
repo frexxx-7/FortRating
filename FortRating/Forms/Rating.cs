@@ -15,9 +15,10 @@ namespace FortRating.Forms
     public partial class Rating : Form
     {
         private AppPage.OpenForm of;
-        private int eventPoint, perfomancePoint, additionalPoints;
+        private int eventPoint, additionalPoints;
+        private double perfomancePoint;
         private string idGroup;
-        private int sumPoints;
+        private double sumPoints;
         private string idStudent, FIOStudent;
         private string selectedIdGroup;
         
@@ -187,7 +188,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                perfomancePoint = !DBNull.Value.Equals(reader[0]) ? Convert.ToInt32(reader[0]) * 10 : 0;
+                perfomancePoint = !DBNull.Value.Equals(reader[0]) ? Convert.ToDouble(reader[0]) * 10 : 0;
             }
             reader.Close();
             db.closeConnection();

@@ -18,7 +18,7 @@ namespace FortRating.Forms.Admin
         private AppPage.OpenForm of;
         private void AdditionalButton_Click(object sender, EventArgs e)
         {
-            AdditionalPoints aap = new AdditionalPoints();
+            AdditionalPoints aap = new AdditionalPoints(idStudent);
             of(aap);
         }
 

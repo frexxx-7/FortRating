@@ -42,6 +42,7 @@
             this.idAdditionalPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idStudentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.AdditionalPointsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,8 @@
             this.AdditionalPointsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idAdditionalPoints,
             this.idStudentColumn,
-            this.PointsColumn});
+            this.PointsColumn,
+            this.DescriptionColumn});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -210,6 +212,13 @@
             this.PointsColumn.Name = "PointsColumn";
             this.PointsColumn.ReadOnly = true;
             // 
+            // DescriptionColumn
+            // 
+            this.DescriptionColumn.HeaderText = "Описание";
+            this.DescriptionColumn.MinimumWidth = 6;
+            this.DescriptionColumn.Name = "DescriptionColumn";
+            this.DescriptionColumn.ReadOnly = true;
+            // 
             // AdditionalPoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,5 +251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idAdditionalPoints;
         private System.Windows.Forms.DataGridViewTextBoxColumn idStudentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PointsColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionColumn;
     }
 }

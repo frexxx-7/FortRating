@@ -111,7 +111,7 @@ namespace FortRating.AddEditForms
                 try
                 {
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Группа изменена");
+                    MessageBox.Show("Дисциплина изменена");
                     this.Close();
 
                 }

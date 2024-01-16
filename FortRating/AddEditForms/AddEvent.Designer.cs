@@ -135,7 +135,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(60, 503);
@@ -146,6 +146,7 @@
             // 
             // IndicatorComboBox
             // 
+            this.IndicatorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.IndicatorComboBox.BackColor = System.Drawing.Color.Transparent;
             this.IndicatorComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.IndicatorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -158,9 +159,9 @@
             "Научно-иследовательский показатель",
             "Общественный показатель",
             "Спортивный показатель"});
-            this.IndicatorComboBox.Location = new System.Drawing.Point(335, 492);
+            this.IndicatorComboBox.Location = new System.Drawing.Point(422, 492);
             this.IndicatorComboBox.Name = "IndicatorComboBox";
-            this.IndicatorComboBox.Size = new System.Drawing.Size(613, 36);
+            this.IndicatorComboBox.Size = new System.Drawing.Size(452, 36);
             this.IndicatorComboBox.TabIndex = 25;
             // 
             // AddEvent

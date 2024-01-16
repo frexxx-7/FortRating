@@ -17,16 +17,18 @@ namespace FortRating.Forms.Admin
     {
         private int sumPoints;
         public delegate void LoadInfoAdditionalPoints();
-        public AdditionalPoints()
+        private string idStudent;
+        public AdditionalPoints(string idStudent)
         {
             InitializeComponent();
+            this.idStudent = idStudent;
             loadInfoAdditionalPointsUser();
         }
         private void loadInfoAdditionalPointsUser()
         {
             AdditionalPointsDataGrid.Rows.Clear();
             DB db = new DB();
-            string queryInfo = $"select * from additionalpoints where idStudent = {AppPage.idStudent}";
+            string queryInfo = $"select * from additionalpoints where idStudent = {idStudent}";
 
             db.openConnection();
 

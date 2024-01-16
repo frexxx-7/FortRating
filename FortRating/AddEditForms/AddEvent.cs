@@ -101,9 +101,9 @@ namespace FortRating.AddEditForms
                     Events ev = new Events(of);
                     of(ev);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ошибка"+ ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 db.closeConnection();
