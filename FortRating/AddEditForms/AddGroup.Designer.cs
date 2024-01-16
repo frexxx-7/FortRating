@@ -216,6 +216,7 @@
             this.Name = "AddGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddGroup";
+            this.Load += new System.EventHandler(this.AddGroup_Load);
             this.headPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

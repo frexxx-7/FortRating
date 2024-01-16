@@ -106,7 +106,7 @@
     <Compile Include="AddEditForms\EditProfile.Designer.cs">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ComboBoxItem.cs" />
+    <Compile Include="Classes\ComboboxItem.cs" />
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\Events\EventsBLL.cs" />
     <Compile Include="Classes\Events\EventsFunc.cs" />
@@ -197,6 +197,24 @@
     </Compile>
     <Compile Include="Forms\Rating.Designer.cs">
       <DependentUpon>Rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReferencesFolder\Discipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReferencesFolder\Discipline.Designer.cs">
+      <DependentUpon>Discipline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReferencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReferencesForm.Designer.cs">
+      <DependentUpon>ReferencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReferencesFolder\Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReferencesFolder\Groups.Designer.cs">
+      <DependentUpon>Groups.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SignUp.cs">
       <SubType>Form</SubType>
@@ -292,6 +310,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Rating.resx">
       <DependentUpon>Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReferencesFolder\Discipline.resx">
+      <DependentUpon>Discipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReferencesForm.resx">
+      <DependentUpon>ReferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReferencesFolder\Groups.resx">
+      <DependentUpon>Groups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>

@@ -27,7 +27,7 @@ namespace FortRating.AddEditForms
         private void AddGroupButton_Click(object sender, EventArgs e)
         {
             LoadInfoGroups lig = new LoadInfoGroups(loadInfoGroups);
-            new AddGroup(lig).Show();
+            new AddGroup(lig, null).Show();
         }
 
         private void EditProfile_Load(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace FortRating.AddEditForms
                     {
                         if (reader["idGroup"].ToString() != "")
                         {
-                            if (Convert.ToInt32((GroupComboBox.Items[i] as FortRating.Classes.ComboBoxItem).Value) == Convert.ToInt32(reader["idGroup"]))
+                            if (Convert.ToInt32((GroupComboBox.Items[i] as FortRating.Classes.ComboboxItem).Value) == Convert.ToInt32(reader["idGroup"]))
                             {
                                 GroupComboBox.SelectedIndex = i;
                             }
@@ -91,7 +91,7 @@ namespace FortRating.AddEditForms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                FortRating.Classes.ComboBoxItem item = new FortRating.Classes.ComboBoxItem();
+                FortRating.Classes.ComboboxItem item = new FortRating.Classes.ComboboxItem();
                 item.Text = $" {reader[1]}";
                 item.Value = reader[0];
                 GroupComboBox.Items.Add(item);
@@ -110,7 +110,7 @@ namespace FortRating.AddEditForms
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@surname", SurnameTextBox.Text);
                 command.Parameters.AddWithValue("@patronymic", PatronymicTextBox.Text);
-                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value);
+                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboboxItem).Value);
                 command.Parameters.AddWithValue("@idUser", AppPage.idUser);
 
                 db.openConnection();
@@ -133,7 +133,7 @@ namespace FortRating.AddEditForms
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@surname", SurnameTextBox.Text);
                 command.Parameters.AddWithValue("@patronymic", PatronymicTextBox.Text);
-                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value);
+                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboboxItem).Value);
 
                 db.openConnection();
 

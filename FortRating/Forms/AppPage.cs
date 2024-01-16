@@ -195,6 +195,14 @@ namespace FortRating.Forms
             OpenChildForm(ps);
         }
 
+        private void ReferencesButton_Click(object sender, EventArgs e)
+        {
+            OpenForm of = new OpenForm(OpenChildForm);
+            ReferencesForm ps = new ReferencesForm(of);
+            ActiveButton(sender);
+            OpenChildForm(ps);
+        }
+
         public AppPage()
         {
             InitializeComponent();

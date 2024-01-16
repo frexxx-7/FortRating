@@ -40,7 +40,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                FortRating.Classes.ComboBoxItem item = new FortRating.Classes.ComboBoxItem();
+                FortRating.Classes.ComboboxItem item = new FortRating.Classes.ComboboxItem();
                 item.Text = $" {reader[1]} {reader[2]}";
                 item.Value = reader[0];
                 GroupComboBox.Items.Add(item);
@@ -151,7 +151,7 @@ namespace FortRating.Forms
 
         private void GroupComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            selectedIdGroup  = (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value.ToString();
+            selectedIdGroup  = (GroupComboBox.SelectedItem as FortRating.Classes.ComboboxItem).Value.ToString();
             loadInfoRating();
         }
 

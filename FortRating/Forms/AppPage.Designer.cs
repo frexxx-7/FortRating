@@ -48,6 +48,7 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PanelDesktop = new Guna.UI2.WinForms.Guna2Panel();
+            this.ReferencesButton = new FontAwesome.Sharp.IconButton();
             this.headPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -139,6 +140,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
+            this.panelMenu.Controls.Add(this.ReferencesButton);
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.StudentsButton);
             this.panelMenu.Controls.Add(this.UsersButton);
@@ -380,6 +382,29 @@
             this.PanelDesktop.Size = new System.Drawing.Size(624, 586);
             this.PanelDesktop.TabIndex = 10;
             // 
+            // ReferencesButton
+            // 
+            this.ReferencesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReferencesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ReferencesButton.FlatAppearance.BorderSize = 0;
+            this.ReferencesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReferencesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReferencesButton.ForeColor = System.Drawing.Color.Black;
+            this.ReferencesButton.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.ReferencesButton.IconColor = System.Drawing.Color.Black;
+            this.ReferencesButton.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ReferencesButton.IconSize = 30;
+            this.ReferencesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReferencesButton.Location = new System.Drawing.Point(0, 583);
+            this.ReferencesButton.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.ReferencesButton.Name = "ReferencesButton";
+            this.ReferencesButton.Size = new System.Drawing.Size(343, 55);
+            this.ReferencesButton.TabIndex = 17;
+            this.ReferencesButton.Text = "Справочники";
+            this.ReferencesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ReferencesButton.UseVisualStyleBackColor = true;
+            this.ReferencesButton.Click += new System.EventHandler(this.ReferencesButton_Click);
+            // 
             // AppPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -423,5 +448,6 @@
         private FontAwesome.Sharp.IconButton StudentsButton;
         private FontAwesome.Sharp.IconButton UsersButton;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton ReferencesButton;
     }
 }

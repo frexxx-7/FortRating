@@ -38,7 +38,7 @@ namespace FortRating.AddEditForms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                FortRating.Classes.ComboBoxItem item = new FortRating.Classes.ComboBoxItem();
+                FortRating.Classes.ComboboxItem item = new FortRating.Classes.ComboboxItem();
                 item.Text = $" {reader[1]}";
                 item.Value = reader[0];
                 StudentsComboBox.Items.Add(item);
@@ -53,7 +53,7 @@ namespace FortRating.AddEditForms
             DB db = new DB();
             MySqlCommand command = new MySqlCommand($"INSERT into participantioninevents (idEvent, idStudent) values(@idEvent, @idStudent)", db.getConnection());
             command.Parameters.AddWithValue("@idEvent", idEvent);
-            command.Parameters.AddWithValue("@idStudent", (StudentsComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value);
+            command.Parameters.AddWithValue("@idStudent", (StudentsComboBox.SelectedItem as FortRating.Classes.ComboboxItem).Value);
             db.openConnection();
 
             try

@@ -22,7 +22,7 @@ namespace FortRating.Forms.Admin
         private void AddDisciplines_Click(object sender, EventArgs e)
         {
             LoadInfoPerfomanceDelegate lipd = new LoadInfoPerfomanceDelegate(loadInfoDisciplines);
-            new AddDisciplines(lipd).Show();
+            new AddDisciplines(lipd, null).Show();
         }
 
         private void EditPerfomanceOneUser_Load(object sender, EventArgs e)

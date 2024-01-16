@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace FortRating.AddEditForms
@@ -16,16 +17,17 @@ namespace FortRating.AddEditForms
     public partial class AddDisciplines : Form
     {
         private EditPerfomanceOneUser.LoadInfoPerfomanceDelegate lipd;
-        public AddDisciplines(EditPerfomanceOneUser.LoadInfoPerfomanceDelegate lipd)
+        private string idDiscipline;
+        public AddDisciplines(EditPerfomanceOneUser.LoadInfoPerfomanceDelegate lipd, string idDiscipline)
         {
             InitializeComponent();
             this.lipd = lipd;
+            this.idDiscipline = idDiscipline;
         }
-        private void loadInfoGroups()
+        private void loadInfoDiscipline()
         {
-            GroupComboBox.Items.Clear();
             DB db = new DB();
-            string queryInfo = $"SELECT id, name FROM groups";
+            string queryInfo = $"SELECT * FROM disciplines WHERE id = '{idDiscipline}'";
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 
             db.openConnection();
@@ -33,8 +35,36 @@ namespace FortRating.AddEditForms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                FortRating.Classes.ComboBoxItem item = new FortRating.Classes.ComboBoxItem();
-                item.Text = $" {reader[1]}";
+                NameTextBox.Text = reader[1].ToString();
+                for (int i = 0; i < GroupComboBox.Items.Count; i++)
+                {
+                    if (reader["idGroup"].ToString() != "")
+                    {
+                        if (Convert.ToInt32((GroupComboBox.Items[i] as ComboboxItem).Value) == Convert.ToInt32(reader["idGroup"]))
+                        {
+                            GroupComboBox.SelectedIndex = i;
+                        }
+                    }
+                }
+            }
+            reader.Close();
+
+            db.closeConnection();
+        }
+        private void loadInfoGroups()
+        {
+            GroupComboBox.Items.Clear();
+            DB db = new DB();
+            string queryInfo = $"SELECT id, name, academicYear FROM groups";
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                FortRating.Classes.ComboboxItem item = new FortRating.Classes.ComboboxItem();
+                item.Text = $" {reader[1]} {reader[2]}";
                 item.Value = reader[0];
                 GroupComboBox.Items.Add(item);
             }
@@ -46,27 +76,52 @@ namespace FortRating.AddEditForms
         private void AddGroupButton_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand($"INSERT into disciplines (name, idGroup) values(@name, @idGroup)", db.getConnection());
-            command.Parameters.AddWithValue("@name", NameTextBox.Text);
-            command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboBoxItem).Value);
-            db.openConnection();
-
-            try
+            if (idDiscipline == null)
             {
-                command.ExecuteNonQuery();
-                MessageBox.Show("Дисциплина добавлена");
+                MySqlCommand command = new MySqlCommand($"INSERT into disciplines (name, idGroup) values(@name, @idGroup)", db.getConnection());
+                command.Parameters.AddWithValue("@name", NameTextBox.Text);
+                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboboxItem).Value);
+                db.openConnection();
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Дисциплина добавлена");
+                    db.closeConnection();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show($"Ошибка {exp}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (lipd != null)
+                        lipd();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MySqlCommand command = new MySqlCommand($"update disciplines set name = @name, idGroup = @idGroup where id = {idDiscipline}", db.getConnection());
+                command.Parameters.AddWithValue("@name", NameTextBox.Text);
+                command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboboxItem).Value);
+
+                db.openConnection();
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Группа изменена");
+                    this.Close();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 db.closeConnection();
             }
-            catch(Exception exp)
-            {
-                MessageBox.Show($"Ошибка {exp}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                lipd();
-                this.Close();
-            }
-
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -82,6 +137,13 @@ namespace FortRating.AddEditForms
         private void AddDisciplines_Load(object sender, EventArgs e)
         {
             loadInfoGroups();
+
+            if (idDiscipline != null)
+            {
+                label1.Text = "Изменить дисциплину";
+                AddGroupButton.Text = "Изменить";
+                loadInfoDiscipline();
+            }
         }
     }
 }
