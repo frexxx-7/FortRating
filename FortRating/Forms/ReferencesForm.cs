@@ -1,4 +1,5 @@
-﻿using FortRating.Forms.References;
+﻿using FortRating.Forms.Admin;
+using FortRating.Forms.References;
 using FortRating.Forms.ReferencesFolder;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,16 @@ namespace FortRating.Forms
         private void EventsButton_Click(object sender, EventArgs e)
         {
             of(new Events(of));
+        }
+
+        private void UsersButton_Click(object sender, EventArgs e)
+        {
+            of(new Users(of));
+        }
+
+        private void StydentsButton_Click(object sender, EventArgs e)
+        {
+            of(new Students(of));
         }
     }
 }

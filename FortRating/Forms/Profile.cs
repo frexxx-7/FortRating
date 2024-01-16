@@ -24,11 +24,6 @@ namespace FortRating.Forms
             InitializeComponent();
             this.of = of;
             this.idAnotherUser= idAnotherUser;
-
-            if (idAnotherUser!=null)
-            {
-                EditProfieButton.Visible = false;
-            }
         }
         private void loadInfoUser()
         {
@@ -91,7 +86,7 @@ namespace FortRating.Forms
 
         private void EditProfieButton_Click(object sender, EventArgs e)
         {
-            EditProfile ep = new EditProfile(idStudent);
+            EditProfile ep = new EditProfile(idStudent, idAnotherUser);
             of(ep);
         }
 

@@ -97,6 +97,7 @@
             this.UsersButton.Size = new System.Drawing.Size(144, 42);
             this.UsersButton.TabIndex = 23;
             this.UsersButton.Text = "Пользователи";
+            this.UsersButton.Click += new System.EventHandler(this.UsersButton_Click);
             // 
             // StydentsButton
             // 
@@ -107,18 +108,19 @@
             this.StydentsButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.StydentsButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.StydentsButton.ForeColor = System.Drawing.Color.White;
-            this.StydentsButton.Location = new System.Drawing.Point(42, 145);
+            this.StydentsButton.Location = new System.Drawing.Point(876, 44);
             this.StydentsButton.Name = "StydentsButton";
             this.StydentsButton.Size = new System.Drawing.Size(144, 42);
             this.StydentsButton.TabIndex = 24;
             this.StydentsButton.Text = "Студенты";
+            this.StydentsButton.Click += new System.EventHandler(this.StydentsButton_Click);
             // 
             // ReferencesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(854, 559);
+            this.ClientSize = new System.Drawing.Size(1051, 559);
             this.Controls.Add(this.StydentsButton);
             this.Controls.Add(this.UsersButton);
             this.Controls.Add(this.EventsButton);

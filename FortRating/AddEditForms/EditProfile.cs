@@ -16,12 +16,14 @@ namespace FortRating.AddEditForms
 {
     public partial class EditProfile : Form
     {
-        private string idStudent;
+        private string idStudent, idUser;
         public delegate void LoadInfoGroups();
-        public EditProfile(string idStudent)
+        public EditProfile(string idStudent, string idUser)
         {
             InitializeComponent();
             this.idStudent = idStudent;
+            if(idUser != null)
+                this.idUser = idUser;
         }
 
         private void AddGroupButton_Click(object sender, EventArgs e)
@@ -43,11 +45,23 @@ namespace FortRating.AddEditForms
         private void loadAllInfoUser()
         {
             DB db = new DB();
-            string queryInfo = idStudent!=null ? $"select students.*, users.* from students " +
+            string queryInfo = null;
+            if (idStudent != null)
+            {
+                queryInfo = idUser == null ? $"select students.*, users.* from students " +
                 $"left join users on users.id = students.idUser " +
-                $"where students.idUser = {AppPage.idUser} " :
-                $"select * from users " +
-                $"where id = {AppPage.idUser}";
+                $"where students.idUser = {AppPage.idUser} " 
+                :
+                $"select students.*, users.* from students " +
+                $"left join users on users.id = students.idUser " +
+                $"where students.idUser = {idUser} "
+                ;
+            }
+            else
+            {
+                queryInfo = $"select * from users " +
+                $"where id = {idStudent}";
+            }
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 
             db.openConnection();
@@ -83,7 +97,7 @@ namespace FortRating.AddEditForms
         {
             GroupComboBox.Items.Clear();
             DB db = new DB();
-            string queryInfo = $"SELECT id, name FROM groups";
+            string queryInfo = $"SELECT id, name, academicYear FROM groups";
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 
             db.openConnection();
@@ -92,7 +106,7 @@ namespace FortRating.AddEditForms
             while (reader.Read())
             {
                 FortRating.Classes.ComboboxItem item = new FortRating.Classes.ComboboxItem();
-                item.Text = $" {reader[1]}";
+                item.Text = $" {reader[1]} {reader[2]}";
                 item.Value = reader[0];
                 GroupComboBox.Items.Add(item);
             }
@@ -111,7 +125,7 @@ namespace FortRating.AddEditForms
                 command.Parameters.AddWithValue("@surname", SurnameTextBox.Text);
                 command.Parameters.AddWithValue("@patronymic", PatronymicTextBox.Text);
                 command.Parameters.AddWithValue("@idGroup", (GroupComboBox.SelectedItem as FortRating.Classes.ComboboxItem).Value);
-                command.Parameters.AddWithValue("@idUser", AppPage.idUser);
+                command.Parameters.AddWithValue("@idUser", idUser==null ? AppPage.idUser : idUser);
 
                 db.openConnection();
 
@@ -149,7 +163,10 @@ namespace FortRating.AddEditForms
                 db.closeConnection();
             }
 
-            MySqlCommand commandUser = new MySqlCommand($"update users set login = @login where id = {AppPage.idUser}", db.getConnection());
+            MySqlCommand commandUser = new MySqlCommand(idUser == null ?  $"update users set login = @login where id = {AppPage.idUser}"
+                :
+            $"update users set login = @login where id = {idUser}"
+            , db.getConnection());
             commandUser.Parameters.AddWithValue("@login", LoginTextBox.Text);
 
             db.openConnection();

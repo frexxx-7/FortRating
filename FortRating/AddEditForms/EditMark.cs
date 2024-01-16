@@ -48,7 +48,7 @@ namespace FortRating.AddEditForms
                 MySqlCommand command = new MySqlCommand($"INSERT into academicpeerfomance (idDescipline, mark, idStudent) values(@idDescipline, @mark, @idStudent)", db.getConnection());
                 command.Parameters.AddWithValue("@idDescipline", idDiscipline);
                 command.Parameters.AddWithValue("@mark", MarkTextBox.Text);
-                command.Parameters.AddWithValue("@idStudent", AppPage.idStudent);
+                command.Parameters.AddWithValue("@idStudent", idStudent);
                 db.openConnection();
 
                 try
