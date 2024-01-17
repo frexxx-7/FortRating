@@ -62,7 +62,7 @@ namespace FortRating.Classes.Events
                     $"LIMIT {startRows}, {numberRows};"
                     :
                     $"SELECT * FROM events " +
-                    $"WHERE id = {idEvent} AND concat(name, description, dateEvent, points) LIKE '%{searchText}%' " +
+                    $"WHERE id = {idEvent} AND concat(name, description, indicatorName, points) LIKE '%{searchText}%' " +
                     $"ORDER BY id DESC " +
                     $"LIMIT {startRows}, {numberRows};"
                     ;
@@ -75,7 +75,7 @@ namespace FortRating.Classes.Events
                     $"LIMIT {startRows}, {numberRows};"
                     :
                     $"SELECT * FROM events " +
-                    $"WHERE concat(name, description, dateEvent, points) LIKE '%{searchText}%' " +
+                    $"WHERE concat(name, description, indicatorName, points) LIKE '%{searchText}%' " +
                     $"ORDER BY id DESC " +
                     $"LIMIT {startRows}, {numberRows};"
                     ;

@@ -108,7 +108,7 @@ namespace FortRating.Forms
                     $"SELECT count(*) FROM events "
                     :
                     $"SELECT count(*) FROM events " +
-                    $"WHERE concat(name, description, dateEvent, points) LIKE '{searchText}%' ";
+                    $"WHERE concat(name, description, indicatorName, points) LIKE '{searchText}%' ";
 
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
             db.openConnection();

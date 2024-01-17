@@ -118,7 +118,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddButton.BorderRadius = 5;
             this.AddButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.AddButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

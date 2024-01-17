@@ -120,10 +120,6 @@ namespace FortRating.Forms
             childForm.Show();
             labelTitleChildForm.Text = currentBtn.Text;
         }
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
