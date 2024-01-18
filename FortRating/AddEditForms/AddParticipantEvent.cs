@@ -39,7 +39,7 @@ namespace FortRating.AddEditForms
             while (reader.Read())
             {
                 FortRating.Classes.ComboboxItem item = new FortRating.Classes.ComboboxItem();
-                item.Text = $" {reader[1]}";
+                item.Text = $" {reader[3]} {reader[1]} {reader[2]}";
                 item.Value = reader[0];
                 StudentsComboBox.Items.Add(item);
             }

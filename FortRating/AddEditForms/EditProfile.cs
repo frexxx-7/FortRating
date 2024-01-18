@@ -16,7 +16,7 @@ namespace FortRating.AddEditForms
 {
     public partial class EditProfile : Form
     {
-        private string idStudent, idUser;
+        private string idStudent, idUser = null;
         public delegate void LoadInfoGroups();
         public EditProfile(string idStudent, string idUser)
         {
@@ -59,8 +59,12 @@ namespace FortRating.AddEditForms
             }
             else
             {
-                queryInfo = $"select * from users " +
-                $"where id = {idStudent}";
+                queryInfo = idUser == null ? $"select * from users " +
+                $"where id = {AppPage.idUser}"
+                :
+                 $"select * from users " +
+                $"where id = {idUser}"
+                ;
             }
             MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
 

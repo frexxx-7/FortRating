@@ -125,8 +125,8 @@ namespace FortRating.Forms
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            loadInfoUserStudent();
             loadInfoUser();
+            loadInfoUserStudent();
 
             if(AppPage.idStudent == null)
             {

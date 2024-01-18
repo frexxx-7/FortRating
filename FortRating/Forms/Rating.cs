@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -16,7 +17,7 @@ namespace FortRating.Forms
     public partial class Rating : Form
     {
         private AppPage.OpenForm of;
-        private int eventPoint, additionalPoints;
+        private double eventPoint, additionalPoints;
         private double perfomancePoint;
         private string idGroup;
         private double sumPoints;
@@ -63,7 +64,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                additionalPoints = !DBNull.Value.Equals(reader[0]) ?  Convert.ToInt32(reader[0]) : 0;
+                additionalPoints = !DBNull.Value.Equals(reader[0]) ?  Convert.ToDouble(reader[0]) : 0;
             }
             reader.Close();
             db.closeConnection();
@@ -81,7 +82,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                eventPoint = !DBNull.Value.Equals(reader[0]) ? Convert.ToInt32(reader[0]) : 0;
+                eventPoint = !DBNull.Value.Equals(reader[0]) ? Convert.ToDouble(reader[0]) : 0;
             }
             reader.Close();
             db.closeConnection();
@@ -121,7 +122,7 @@ namespace FortRating.Forms
 
                     sumPoints = eventPoint + perfomancePoint + additionalPoints;
 
-                    dataDB[dataDB.Count - 1][0] = counter.ToString();
+                    
                     dataDB[dataDB.Count - 1][1] = FIOStudent.ToString();
                     dataDB[dataDB.Count - 1][2] = sumPoints.ToString();
 
@@ -132,6 +133,13 @@ namespace FortRating.Forms
                     counter++;
                 }
                 reader.Close();
+                dataDB.Sort((x, y) => Comparer<int>.Default.Compare(int.Parse(y[2]), int.Parse(x[2])));
+                counter = 1;
+                foreach (var data in dataDB)
+                {
+                    data[0] = counter.ToString();
+                    counter++;
+                }
                 foreach (string[] s in dataDB)
                     RatingDataGrid.Rows.Add(s);
             }

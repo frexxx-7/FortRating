@@ -15,7 +15,7 @@ namespace FortRating.Forms
 {
     public partial class InfoPoints : Form
     {
-        private int eventPoint, perfomancePoint, additionalPoints;
+        private double eventPoint, perfomancePoint, additionalPoints;
         private string idGroup;
         public InfoPoints()
         {
@@ -39,7 +39,8 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                additionalPoints = Convert.ToInt32(reader[0]);
+                if (reader[0].ToString() != "")
+                    additionalPoints = Convert.ToDouble(reader[0]);
                 AdditionalPointsLabel.Text = additionalPoints.ToString();
             }
             reader.Close();
@@ -58,7 +59,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                eventPoint = Convert.ToInt32(reader[0]);
+                eventPoint = Convert.ToDouble(reader[0]);
                 EventsPointsLabel.Text = eventPoint.ToString();
             }
             reader.Close();
@@ -96,7 +97,7 @@ namespace FortRating.Forms
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                perfomancePoint = !DBNull.Value.Equals(reader[0]) ? Convert.ToInt32(reader[0]) * 10 : 0;
+                perfomancePoint = !DBNull.Value.Equals(reader[0]) ? Convert.ToDouble(reader[0]) * 10 : 0;
                 PerfomancePointsLabel.Text = perfomancePoint.ToString();
             }
             reader.Close();
